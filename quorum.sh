@@ -16,12 +16,23 @@ fi
 
 QUORUM_DJANGIO_FILES="QuorumMobile/app/constants/djangio_cache.json _custom_event_djangio_cache.json _djangio_cache.json _new_grassroots_djangio_cache.json _unsubscribed_djangio_cache.json"
 
+latesthotfix() {
+    [[ ! -d ".git" ]] && (
+        echo "Not in toplevel?" >/dev/stderr
+        return 1
+    )
+    ls .git/refs/remotes/origin/hotfix | \
+        grep '[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*' | \
+        sort -rV |
+        head -n 1
+}
+
 checks() {(
     nvm use node
     source "$QUORUM_ROOT/venv/bin/activate"
     cd "$QUORUM_ROOT"
     export PYTHONPATH="$QUORUMROOT"
-    COMMON_ANCESTOR="$(git merge-base HEAD hotfix)"
+    COMMON_ANCESTOR="$(git merge-base HEAD origin/hotfix/$(latesthotfix))"
     ALTERED_FILES="$(git diff --name-only $COMMON_ANCESTOR)"
     [[ -z "$ALTERED_FILES" ]] && (
         echo "No files to check!"
