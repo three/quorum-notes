@@ -47,6 +47,8 @@ alias fullsync='rsync -rv --exclude-from="$QUORUM_TOOLS_DIR/rsync-exclude.txt" -
 
 # SSH into bastion with port forwarding to both dev and prod
 alias dbconnect='ssh -L 5433:quorum-where-the-magic-happens.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432 -L 5434:quorum-production.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432 bastion'
+# SSH into basemenet with 8000 and 8001 port forwarding
+alias bmconnect='ssh -L localhost:8000:localhost:8000 qdev@basement.0 -L localhost:8001:localhost:8001'
 
 # Docker compsoe with custom compose file and related commands
 alias dc='docker-compose -f "$HOME/docker-compose.yml"'
