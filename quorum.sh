@@ -69,7 +69,7 @@ alias dbconnect='ssh -L 5433:quorum-where-the-magic-happens.ck4wgl7u5wcg.us-east
 alias bmconnect='ssh -L localhost:8000:localhost:8000 qdev@basement.0 -L localhost:8001:localhost:8001'
 
 # Docker compsoe with custom compose file and related commands
-alias dc='docker-compose -f "$HOME/docker-compose.yml"'
-alias up='docker-compose -f "$HOME/docker-compose.yml" up -d'
-alias logs='docker-compose -f "$HOME/docker-compose.yml" logs -f'
-alias reload='docker-compose -f "$HOME/docker-compose.yml" restart server frontend'
+alias dc='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml"'
+alias up='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml" up -d'
+alias logs='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml" logs -f'
+alias reload='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml" restart server frontend'
