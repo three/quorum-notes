@@ -54,7 +54,7 @@ alias fc='docker-compose -f docker-compose.yml -f docker/local/docker-compose.fu
 # Wake baement.0 from its slumber
 alias wakebasement='wakeonlan FC:AA:14:2A:AF:79'
 # Sync Development files to basement.0
-alias fullsync='rsync -rv --exclude-from="$QUORUM_TOOLS_DIR/rsync-exclude.txt" --exclude-from="$QUORUM_ROOT/.gitignore" "$QUORUM_ROOT" "$QUORUM_REMOTE_SSH:$QUORUM_REMOTE_ROOT"'
+alias fullsync='rsync -rv --exclude-from="$QUORUM_TOOLS_DIR/rsync-exclude.txt" --exclude-from="$QUORUM_ROOT/.gitignore" "$QUORUM_ROOT/" "$QUORUM_REMOTE_SSH:$QUORUM_REMOTE_ROOT"'
 
 # SSH into bastion with port forwarding to both dev and prod
 alias dbconnect='ssh -L 5433:quorum-where-the-magic-happens.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432 -L 5434:quorum-production.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432 bastion'
