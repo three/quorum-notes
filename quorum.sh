@@ -17,14 +17,19 @@ fi
 QUORUM_DJANGIO_FILES="QuorumMobile/app/constants/djangio_cache.json _custom_event_djangio_cache.json _djangio_cache.json _new_grassroots_djangio_cache.json _unsubscribed_djangio_cache.json"
 
 latesthotfix() {
-    [[ ! -d ".git" ]] && (
-        echo "Not in toplevel?" >/dev/stderr
+    GIT_DIR="$(git rev-parse --git-dir)"
+    [[ $? != 0 ]] && {
+        echo "latesthotfix: git error"
         return 1
-    )
-    ls .git/refs/remotes/origin/hotfix | \
+    }
+    ls "$GIT_DIR/refs/remotes/origin/hotfix" | \
         grep '[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*' | \
         sort -rV |
         head -n 1
+}
+
+hotfix() {
+    echo "origin/hotfix/$(latesthotfix)"
 }
 
 checks() {(
@@ -55,6 +60,8 @@ alias fc='docker-compose -f docker-compose.yml -f docker/local/docker-compose.fu
 alias wakebasement='wakeonlan FC:AA:14:2A:AF:79'
 # Sync Development files to basement.0
 alias fullsync='rsync -C -rv --exclude-from="$QUORUM_TOOLS_DIR/rsync-exclude.txt" --exclude-from="$QUORUM_ROOT/.gitignore" "$QUORUM_ROOT/" "$QUORUM_REMOTE_SSH:$QUORUM_REMOTE_ROOT"'
+# Checkout all files from the latest hotfix to QUORUM_ROOT
+alias checkouthotfix='git --work-tree="$QUORUM_ROOT" checkout "$(hotfix)" -- .'
 
 # SSH into bastion with port forwarding to both dev and prod
 alias dbconnect='ssh -L 5433:quorum-where-the-magic-happens.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432 -L 5434:quorum-production.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432 bastion'
