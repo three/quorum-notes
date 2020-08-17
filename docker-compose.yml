@@ -45,6 +45,12 @@ services:
       POSTGRES_PASS: "dockerizedpostgres"
     ports:
       - "5432:5432"
+  nginx:
+    build:
+      context: /home/qdev/quorum-tools/nginx
+      dockerfile: /home/qdev/quorum-tools/nginx/Dockerfile
+    container_name: nginx
+    network_mode: "host"
 
 volumes:
   node_modules:
