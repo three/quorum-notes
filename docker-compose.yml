@@ -3,7 +3,7 @@ services:
   server:
     build:
       context: ${QUORUM_ROOT}
-      dockerfile: Dockerfile-server
+      dockerfile: ${QUORUM_TOOLS_DIR}/server/Dockerfile
     command: python manage.py runserver_plus 0.0.0.0:8000
     container_name: django_server
     environment:
