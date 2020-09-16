@@ -1,17 +1,17 @@
 if [[ ! -d "$QUORUM_ROOT" ]]; then
-    QUORUM_ROOT="$HOME/dev/quorum-site"
+    export QUORUM_ROOT="$HOME/dev/quorum-site"
 fi
 
 if [[ ! -d "$QUORUM_REMOTE_SSH" ]]; then
-    QUORUM_REMOTE_SSH="qdev@basement.0"
+    export QUORUM_REMOTE_SSH="qdev@basement.0"
 fi
 
 if [[ ! -d "$QUORUM_REMOTE_ROOT" ]]; then
-    QUORUM_REMOTE_ROOT="/home/qdev/quorum-site"
+    export QUORUM_REMOTE_ROOT="/home/qdev/quorum-site"
 fi
 
 if [[ ! -d "$QUORUM_TOOLS_DIR" ]]; then
-    QUORUM_TOOLS_DIR="$(dirname "$(realpath "$0")")"
+    export QUORUM_TOOLS_DIR="$(dirname "$(realpath "$0")")"
 fi
 
 QUORUM_DJANGIO_FILES="QuorumMobile/app/constants/djangio_cache.json _custom_event_djangio_cache.json _djangio_cache.json _new_grassroots_djangio_cache.json _unsubscribed_djangio_cache.json"

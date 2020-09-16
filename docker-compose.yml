@@ -2,7 +2,7 @@ version: '3'
 services:
   server:
     build:
-      context: /home/qdev/quorum-site
+      context: ${QUORUM_ROOT}
       dockerfile: Dockerfile-server
     command: python manage.py runserver_plus 0.0.0.0:8000
     container_name: django_server
@@ -13,7 +13,7 @@ services:
       USE_LOCAL_DB: ${USE_LOCAL_DB}  # only run server connected to dockerized postgres if passed via environment variable
     restart: unless-stopped
     volumes:
-      - /home/qdev/quorum-site:/code
+      - ${QUORUM_ROOT}:/code
     ports:
       - "8000:8000"
       - "9200:9200"
@@ -22,7 +22,7 @@ services:
     network_mode: "host"
   frontend:
     build:
-      context: /home/qdev/quorum-site
+      context: ${QUORUM_ROOT}
       dockerfile: Dockerfile-frontend
     command: gulp --usingDocker=true
     container_name: frontend
@@ -30,13 +30,13 @@ services:
       - "8001:8001"
     restart: unless-stopped
     volumes:
-      - /home/qdev/quorum-site:/code
+      - ${QUORUM_ROOT}:/code
       - node_modules:/code/node_modules
       - shared_node_modules:/code/shared/node_modules
       - QuorumDesign_node_modules:/code/QuorumDesign/node_modules
   postgres:
     build:
-      context: /home/qdev/quorum-site
+      context: ${QUORUM_ROOT}
       dockerfile: Dockerfile-postgres-local
     container_name: postgres_db
     environment:
@@ -47,8 +47,8 @@ services:
       - "5432:5432"
   nginx:
     build:
-      context: /home/qdev/quorum-tools/nginx
-      dockerfile: /home/qdev/quorum-tools/nginx/Dockerfile
+      context: ${QUORUM_TOOLS_DIR}/nginx
+      dockerfile: Dockerfile
     container_name: nginx
     network_mode: "host"
 
