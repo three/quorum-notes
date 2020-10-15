@@ -45,6 +45,8 @@ checks() {(
     )
     echo "Files to check:"
     echo "$ALTERED_FILES" | xargs python tests/check/__main__.py
+    RETURN_CODE="$?"
+    echo "Exit Status $RETURN_CODE"
     return $?
 )}
 
