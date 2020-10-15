@@ -64,14 +64,13 @@ alias fullsync='rsync -C -rv --exclude-from="$QUORUM_TOOLS_DIR/rsync-exclude.txt
 alias checkouthotfix='git --work-tree="$QUORUM_ROOT" checkout "$(hotfix)" -- .'
 
 # SSH into bastion with port forwarding to both dev and prod
-alias dbconnect='ssh -L 5433:quorum-where-the-magic-happens.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432 -L 5434:quorum-production.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432 bastion'
+alias bsc='ssh -L 5433:quorum-where-the-magic-happens.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432 -L 5434:quorum-production.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432 -Nnf bastion'
 # SSH into basemenet with 8000 and 8001 port forwarding
-alias bmconnect='ssh -L localhost:8000:localhost:8000 qdev@basement.0 -L localhost:8001:localhost:8001 -L localhost:8443:localhost:8443'
+alias prc='ssh -L localhost:8000:localhost:8000 qdev@basement.0 -L localhost:8001:localhost:8001 -L localhost:8443:localhost:8443 -Nnf'
 
 # Docker compsoe with custom compose file and related commands
 alias dc='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml"'
 alias up='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml" up -d'
-alias logs='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml" logs -f'
-alias reload='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml" restart server frontend'
+alias logs='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml" logs -f --tail=10'
 alias managepy='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml" exec server python manage.py'
 alias jest='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml" exec frontend ./node_modules/.bin/jest'
