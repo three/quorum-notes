@@ -17,13 +17,9 @@ fi
 QUORUM_DJANGIO_FILES="QuorumMobile/app/constants/djangio_cache.json _custom_event_djangio_cache.json _djangio_cache.json _new_grassroots_djangio_cache.json _unsubscribed_djangio_cache.json"
 
 latesthotfix() {
-    GIT_DIR="$(git rev-parse --git-dir)"
-    [[ $? != 0 ]] && {
-        echo "latesthotfix: git error"
-        return 1
-    }
-    ls "$GIT_DIR/refs/remotes/origin/hotfix" | \
-        grep '[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*' | \
+    git branch -a | \
+        grep 'remotes/origin/hotfix' | \
+        grep -o '[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*' | \
         sort -rV |
         head -n 1
 }
