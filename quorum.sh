@@ -1,9 +1,14 @@
+which realpath >/dev/null || (
+    echo "No command realpath. You're probably on OSX and don't have coreutils installed."
+    echo "Try: brew install coreutils"
+)
+
 if [[ ! -d "$QUORUM_ROOT" ]]; then
     export QUORUM_ROOT="$HOME/dev/quorum-site"
 fi
 
 if [[ ! -d "$QUORUM_REMOTE_SSH" ]]; then
-    export QUORUM_REMOTE_SSH="qdev@basement.0"
+    export QUORUM_REMOTE_SSH="qdev@patrick.spongebob.link"
 fi
 
 if [[ ! -d "$QUORUM_REMOTE_ROOT" ]]; then
@@ -68,7 +73,7 @@ alias checkouthotfix='git --work-tree="$QUORUM_ROOT" checkout "$(hotfix)" -- .'
 # SSH into bastion with port forwarding to both dev and prod
 alias bsc='ssh -L 5433:quorum-where-the-magic-happens.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432 -L 5434:quorum-production.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432 -Nnf bastion'
 # SSH into basemenet with 8000 and 8001 port forwarding
-alias prc='ssh -L localhost:8000:localhost:8000 qdev@basement.0 -L localhost:8001:localhost:8001 -L localhost:8443:localhost:8443 -Nnf'
+alias prc='ssh -L localhost:8000:localhost:8000 qdev@patrick.spongebob.link -L localhost:8001:localhost:8001 -L localhost:8443:localhost:8443 -Nnf'
 
 # Docker compsoe with custom compose file and related commands
 alias dc='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml"'
