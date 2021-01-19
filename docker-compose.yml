@@ -7,7 +7,7 @@ services:
     command: python manage.py runserver_plus 0.0.0.0:8000
     container_name: django_server
     environment:
-      WEB_APP: 127.0.0.1
+      WEB_APP: host.docker.internal
       DOCKER_TESTING_LOCAL_PG: ${DOCKER_TESTING_LOCAL_PG} # Allow using  the dockerized postgres db if desired
       USE_PROD_DB: ${USE_PROD_DB}  # only connect to the prod db if passed via environment variable
       USE_LOCAL_DB: ${USE_LOCAL_DB}  # only run server connected to dockerized postgres if passed via environment variable
@@ -19,7 +19,8 @@ services:
       - "9200:9200"
     stdin_open: true
     tty: true
-    network_mode: "host"
+    networks:
+      - development-network
   frontend:
     build:
       context: ${QUORUM_ROOT}
@@ -31,9 +32,8 @@ services:
     restart: unless-stopped
     volumes:
       - ${QUORUM_ROOT}:/code
-      - node_modules:/code/node_modules
-      - shared_node_modules:/code/shared/node_modules
-      - QuorumDesign_node_modules:/code/QuorumDesign/node_modules
+    networks:
+      - development-network
   postgres:
     build:
       context: ${QUORUM_ROOT}
@@ -45,17 +45,15 @@ services:
       POSTGRES_PASS: "dockerizedpostgres"
     ports:
       - "5432:5432"
+    networks:
+      - development-network
   nginx:
     build:
       context: ${QUORUM_TOOLS_DIR}/nginx
       dockerfile: Dockerfile
     container_name: nginx
-    network_mode: "host"
-
-volumes:
-  node_modules:
-  shared_node_modules:
-  QuorumDesign_node_modules:
+    networks:
+      - development-network
 
 networks:
   development-network:
