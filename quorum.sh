@@ -19,6 +19,8 @@ if [[ ! -d "$QUORUM_TOOLS_DIR" ]]; then
     export QUORUM_TOOLS_DIR="$(dirname "$(realpath "$0")")"
 fi
 
+export PATH="$QUORUM_TOOLS_DIR/bin:$PATH"
+
 QUORUM_DJANGIO_FILES="QuorumMobile/app/constants/djangio_cache.json _custom_event_djangio_cache.json _djangio_cache.json _new_grassroots_djangio_cache.json _unsubscribed_djangio_cache.json"
 
 latesthotfix() {
@@ -36,24 +38,6 @@ latesthotfix() {
 hotfix() {
     echo "origin/hotfix/$(latesthotfix)"
 }
-
-checks() {(
-    nvm use node
-    source "$QUORUM_ROOT/venv/bin/activate"
-    cd "$QUORUM_ROOT"
-    export PYTHONPATH="$QUORUMROOT"
-    COMMON_ANCESTOR="$(git merge-base HEAD origin/hotfix/$(latesthotfix))"
-    ALTERED_FILES="$(git diff --name-only $COMMON_ANCESTOR)"
-    [[ -z "$ALTERED_FILES" ]] && (
-        echo "No files to check!"
-        return 0
-    )
-    echo "Files to check:"
-    echo "$ALTERED_FILES" | xargs python tests/check/__main__.py
-    RETURN_CODE="$?"
-    echo "Exit Status $RETURN_CODE"
-    return $?
-)}
 
 # Change directory to quorum-site
 alias q='cd "$QUORUM_ROOT"'

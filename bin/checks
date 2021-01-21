@@ -1,0 +1,36 @@
+#!/usr/bin/env zsh
+
+# Bash Boilerplate Checks
+set -o errexit
+set -o pipefail
+
+source "$QUORUM_TOOLS_DIR/quorum.sh"
+
+echo "Ensuring the environment has node..."
+(which node >/dev/null && node --version) || {
+    NVM_DIRECTORY="$DOTFILES/deps/nvm"
+    source "$NVM_DIRECTORY/nvm.sh"
+    nvm use node
+}
+echo
+
+echo "Loading virtualenv..."
+source "$QUORUM_ROOT/venv/bin/activate"
+export PYTHONPATH="$(pwd)"
+echo
+
+echo "Searching for files to check..."
+COMMON_ANCESTOR="$(git merge-base HEAD origin/hotfix/$(latesthotfix))"
+echo "Common Ancestor: $COMMON_ANCESTOR"
+ALTERED_FILES="$(git diff --name-only $COMMON_ANCESTOR)"
+[[ -z "$ALTERED_FILES" ]] && (
+    echo "No files to check!"
+    return 0
+)
+echo
+
+echo "$ALTERED_FILES" | xargs python tests/check/__main__.py
+RETURN_CODE="$?"
+
+echo "Exit Status $RETURN_CODE"
+return $?
