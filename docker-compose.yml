@@ -13,7 +13,7 @@ services:
       USE_LOCAL_DB: ${USE_LOCAL_DB}  # only run server connected to dockerized postgres if passed via environment variable
     restart: unless-stopped
     volumes:
-      - ${QUORUM_ROOT}:/code
+      - ${QUORUM_ROOT}:/code:delegated
     ports:
       - "8000:8000"
       - "9200:9200"
@@ -31,7 +31,7 @@ services:
       - "8001:8001"
     restart: unless-stopped
     volumes:
-      - ${QUORUM_ROOT}:/code
+        - ${QUORUM_ROOT}:/code:delegated
     networks:
       - development-network
   postgres:
