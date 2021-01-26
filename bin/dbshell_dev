@@ -1,0 +1,3 @@
+#!/bin/sh
+export PGPASSWORD="$(grep 'DEV_DB_PASSWORD \=' quorum/settings/base_settings.py | sed 's/^.* "//' | sed 's/".*$//')"
+exec pgcli -h localhost -p 5433 -u quorum_user -d quorum_db
