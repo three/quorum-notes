@@ -50,7 +50,7 @@ then
         echo "Passed"
     else
         echo "Darker returned $?"
-        [[ "$RETURN_CODE" == 0 ]] && RETURN_CODE = 1
+        [[ "$RETURN_CODE" == 0 ]] && RETURN_CODE=1
     fi
 else
     echo "Darker not in your PATH, skipping"
@@ -58,5 +58,5 @@ fi
 echo
 
 echo "Exit Status $RETURN_CODE"
-return $?
+exit $?
 

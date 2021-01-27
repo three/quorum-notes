@@ -54,6 +54,10 @@ services:
     container_name: nginx
     networks:
       - development-network
+    ports:
+      - "8443:8443"
+    environment:
+        NGINX_PORT: 8443
 
 networks:
   development-network:
