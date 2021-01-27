@@ -1,0 +1,14 @@
+#!/bin/sh
+echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+echo '!!!! OPENING UP DBSHELL AS USER UPDATE !!!'
+echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+echo
+echo 'To check for locks and blocked tables across all tables:'
+echo '  SELECT * FROM get_query_blockers();'
+echo 'Running Migrations Documentation:'
+echo '  https://docs.google.com/document/d/1Zr9y3dTeWGThQ6BMHEp5xZhE_4Pg1kflKm-XnRoLnUQ/'
+echo
+
+export PGPASSWORD="$(grep 'PROD_DB_PASSWORD_UPDATE \=' quorum/settings/production_secrets.py | sed 's/^.* "//' | sed 's/".*$//')"
+
+exec psql -h localhost -p 5434 -U update -d quorum_db
