@@ -1,0 +1,9 @@
+#!/bin/sh
+echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+echo '!!!! OPENING UP DBSHELL AS USER UPDATE !!!'
+echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+echo
+echo 'Get the password from quorum/settings/production_secrets.py'
+echo '    PROD_DB_PASSWORD_UPDATE= ... '
+echo
+exec pgcli -h localhost -p 5434 -u update -d quorum_db
