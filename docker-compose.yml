@@ -58,6 +58,9 @@ services:
       - "8443:8443"
     environment:
         NGINX_PORT: 8443
+    volumes:
+        - ${QUORUM_ROOT}/certs/quorum.club/fullchain.pem:/etc/nginx/fullchain.pem
+        - ${QUORUM_ROOT}/certs/quorum.club/privkey.pem:/etc/nginx/privkey.pem
 
 networks:
   development-network:
