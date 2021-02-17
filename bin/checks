@@ -45,7 +45,7 @@ echo "Checking darker..."
 if which darker >/dev/null
 then
     echo "Darker Version: $(darker --version)"
-    if darker --check -r "$COMMON_ANCESTOR" --line-length 120 .
+    if darker --check -r "$COMMON_ANCESTOR" --line-length 120 . >/dev/null
     then
         echo "Passed"
     else

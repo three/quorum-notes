@@ -1,0 +1,12 @@
+FROM node:10-jessie
+
+RUN mkdir /code
+WORKDIR /code
+
+RUN apt-get update
+RUN apt-get install -y vim
+
+RUN npm install --global gulp-cli stylus
+
+RUN cd /root && git clone https://github.com/AGWA/git-crypt.git --branch 0.6.0 && cd /root/git-crypt && make install
+
