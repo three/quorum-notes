@@ -1,5 +1,7 @@
-#!/usr/bin/env bash
-([[ -d /code/venv/bin ]] && source /code/venv/bin/activate) || (
-    echo "Warning! Unable to activate virtualenv."
-)
-exec zsh "$@"
+#!/usr/bin/env zsh
+cd /code
+if [[ -v 1 ]]; then
+    "$@"
+else
+    exec zsh
+fi
