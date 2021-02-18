@@ -64,3 +64,7 @@ alias jest='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml" exec fronte
 
 # Ripgrep, but only things we care about
 alias qg="rg -g '*.js' -g '*.jsx' -g '*.py'"
+
+# New Docker setup
+alias qq='docker run -v "$QUORUM_ROOT:/code:delegated" -v "$HOME/dev/home:/root" --rm -it qring'
+alias rebuild_qring='(cd "$QUORUM_TOOLS_DIR/qring" && docker build -t qring .)'
