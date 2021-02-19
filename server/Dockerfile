@@ -30,8 +30,7 @@ RUN ssh-keygen -t rsa -b 4096 -N "" -f "$HOME/.ssh/id_rsa" && \
 WORKDIR /code
 COPY ./tests/ ./tests/
 #COPY gdrive_token.json gdrive_credentials.json gdrive_service_account_key_file.json /root/.ssh/
-RUN pip install -r tests/requirements.txt && \
-    python -c "import nltk; nltk.download('averaged_perceptron_tagger')"
+RUN pip install -r tests/requirements.txt
 
 WORKDIR /code
 CMD ["/usr/bin/zsh"]

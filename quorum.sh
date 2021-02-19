@@ -66,5 +66,11 @@ alias jest='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml" exec fronte
 alias qg="rg -g '*.js' -g '*.jsx' -g '*.py'"
 
 # New Docker setup
-alias qq='docker run -v "$QUORUM_ROOT:/code:delegated" -v "$HOME/dev/home:/root" --rm -it qring'
+run_qring() {
+    docker run -v "$QUORUM_ROOT:/code:delegated" -v "$HOME/dev/home:/root" --rm -it qring "$@"
+}
+
 alias rebuild_qring='(cd "$QUORUM_TOOLS_DIR/qring" && docker build -t qring .)'
+alias runfrontend='docker run -v "$QUORUM_ROOT:/code:delegated" -v "$HOME/dev/home:/root" -p 8001:8001 --rm -it qring zsh -c "cd /code && ./node_modules/.bin/gulp --usingDocker=true"'
+alias runserver='docker run -v "$QUORUM_ROOT:/code:delegated" -v "$HOME/dev/home:/root" -p 8000:8000 --rm -it qring zsh -c "cd /code && source venv/bin/activate && WEB_APP=host.docker.internal python manage.py runserver_plus 0.0.0.0:8000"'
+alias qq='docker run -v "$QUORUM_ROOT:/code:delegated" -v "$HOME/dev/home:/root" --rm -it qring zsh'
