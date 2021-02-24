@@ -14,6 +14,7 @@ services:
     restart: unless-stopped
     volumes:
       - ${QUORUM_ROOT}:/code:delegated
+      - ${HOME}/dev/home:/root
         #      - ${QUORUM_TOOLS_DIR}/server_entry.sh:/entry
     ports:
       - "8000:8000"

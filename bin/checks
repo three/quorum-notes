@@ -15,7 +15,7 @@ echo "Ensuring the environment has node..."
 echo
 
 echo "Loading virtualenv..."
-source "$QUORUM_ROOT/venv/bin/activate"
+source "$HOME/dev/qsite-local/venv/bin/activate"
 export PYTHONPATH="$(pwd)"
 echo
 

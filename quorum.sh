@@ -61,6 +61,7 @@ alias up='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml" up -d'
 alias logs='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml" logs -f --tail=10'
 alias managepy='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml" exec server python manage.py'
 alias jest='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml" exec frontend ./node_modules/.bin/jest'
+alias qsh='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml" run --rm server zsh'
 
 # Ripgrep, but only things we care about
 alias qg="rg -g '*.js' -g '*.jsx' -g '*.py'"
