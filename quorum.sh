@@ -35,6 +35,12 @@ hotfix() {
     echo "origin/hotfix/$(latesthotfix)"
 }
 
+diffhotfix() {(
+    CURRENT_HOTFIX="$(hotfix)"
+    MERGE_BASE="$(git merge-base HEAD "$CURRENT_HOTFIX")"
+    git diff "$MERGE_BASE"
+)}
+
 # Change directory to quorum-site
 alias q='cd "$QUORUM_ROOT"'
 # Run Jest tests
