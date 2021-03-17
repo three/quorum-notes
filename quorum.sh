@@ -41,6 +41,8 @@ diffhotfix() {(
     git diff "$MERGE_BASE"
 )}
 
+alias ltedit='/Applications/PyCharm.app/Contents/bin/ltedit.sh'
+
 # Change directory to quorum-site
 alias q='cd "$QUORUM_ROOT"'
 # Run Jest tests
