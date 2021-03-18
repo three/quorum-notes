@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+apt-get install -y dnsutils
+echo -e "$(dig +short host.docker.internal)\tpostgres" >>/etc/hosts
+export WEB_APP=docker.host.internal
+while true; do
+    echo "Starting runserver_plus 0.0.0.0:8000..."
+    sleep 0.5
+    python manage.py runserver_plus 0.0.0.0:8000
+done

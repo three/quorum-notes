@@ -10,7 +10,7 @@ apt-get dist-upgrade -y
 apt-get install -y bash-completion libssl-dev krb5-multidev comerr-dev python-dev libenchant1c2a libpq-dev libproj-dev \
     gdal-bin libffi-dev libxml2 libxml2-dev libxslt1-dev libxslt1-dev libxslt1.1 libgconf-2-4 libopenblas-dev liblapack-dev \
     librsvg2-bin libjpeg-dev make memcached wamerican binutils tesseract-ocr imagemagick supervisor xpdf libreoffice-common \
-    poppler-utils libpulse-dev swig autoconf automake libtool pkg-config zsh nodejs vim git man curl \
+    poppler-utils libpulse-dev swig autoconf automake libtool pkg-config zsh nodejs vim git man curl libmupdf-dev dnsutils \
     python2 python-pip python3 python3-pip
 echo
 

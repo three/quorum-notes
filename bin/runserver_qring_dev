@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+set -eu
+docker run -v "$PWD:/code:delegated" -v "$HOME/dev/home:/root" -v "$QUORUM_TOOLS_DIR:/opt/quorumtools" --rm -it /opt/quorumtools/bin/qring_runserver

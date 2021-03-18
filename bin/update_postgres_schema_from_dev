@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -eu
+
+POSTGRES_APP_BIN="/Applications/Postgres.app/Contents/Versions/latest/bin/pg_dump"
+DB_NAME="quorum_$(whoami)"
+
+export PGPASSWORD="$(grep 'DEV_DB_PASSWORD \=' quorum/settings/base_settings.py | sed 's/^.* "//' | sed 's/".*$//')"
+[[ -d "$POSTGRES_APP_BIN" ]] && PATH="$PATH:$POSTGRES_APP_BIN"
+
+SCHEMA_FILE="$(mktemp)"
+
+echo "Schema file will be output to $SCHEMA_FILE"
+echo "Step 1: Dump database to the schema file"
+pg_dump -s -h 127.0.0.1 -U quorum_user -d quorum_db -f "$SCHEMA_FILE" -p 5433 -v
+echo "Step 2: Drop exisitng database $DB_NAME if exists"
+dropdb $DB_NAME || echo "dropdb command failed, ignoring (DB probably already existed)"
+echo "Step 3: Create database $DB_NAME"
+createdb $DB_NAME
+echo "Step 4: Load schema"
+psql  -f "$SCHEMA_FILE"
+echo "Done."
