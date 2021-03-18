@@ -47,7 +47,7 @@ alias ltedit='/Applications/PyCharm.app/Contents/bin/ltedit.sh'
 alias q='cd "$QUORUM_ROOT"'
 # Run Jest tests
 alias jest='nvm run node "$QUORUM_ROOT/node_modules/.bin/jest"'
-alias jestd='nvm run node --inspect-brk "QUORUM_ROOT/node_modules/.bin/jest" --runInBand'
+alias jestd='nvm run node --inspect-brk "$QUORUM_ROOT/node_modules/.bin/jest" --runInBand'
 # Docker compose with fullstack configuration
 alias fc='docker-compose -f docker-compose.yml -f docker/local/docker-compose.fullstack.yml'
 
@@ -68,16 +68,10 @@ alias dc='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml"'
 alias up='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml" up -d'
 alias logs='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml" logs -f --tail=10'
 alias managepy='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml" exec server python manage.py'
-alias jest='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml" exec frontend ./node_modules/.bin/jest'
 alias qsh='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml" run --rm server zsh'
 
 # Ripgrep, but only things we care about
 alias qg="rg -g '*.js' -g '*.jsx' -g '*.py'"
-
-# New Docker setup
-run_qring() {
-    docker run -v "$QUORUM_ROOT:/code:delegated" -v "$HOME/dev/home:/root" --rm -it qring "$@"
-}
 
 alias rebuild_qring='(cd "$QUORUM_TOOLS_DIR/qring" && docker build -t qring .)'
 alias runfrontend='docker run -v "$QUORUM_ROOT:/code:delegated" -v "$HOME/dev/home:/root" -p 8001:8001 --rm -it qring zsh -c "cd /code && ./node_modules/.bin/gulp --usingDocker=true"'
