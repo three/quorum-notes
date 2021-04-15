@@ -53,6 +53,7 @@ alias jestd='nvm run node --inspect-brk "$QUORUM_ROOT/node_modules/.bin/jest" --
 
 # Run the frontend
 alias runfrontend='nvm run 10 ./node_modules/.bin/gulp'
+alias runfrontend_restart='while True; do nvm run 10 ./node_modules/.bin/gulp; done'
 
 # Docker compose with fullstack configuration
 alias fc='docker-compose -f docker-compose.yml -f docker/local/docker-compose.fullstack.yml'

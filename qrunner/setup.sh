@@ -11,7 +11,7 @@ apt-get install -y bash-completion libssl-dev krb5-multidev comerr-dev python-de
     gdal-bin libffi-dev libxml2 libxml2-dev libxslt1-dev libxslt1-dev libxslt1.1 libgconf-2-4 libopenblas-dev liblapack-dev \
     librsvg2-bin libjpeg-dev make memcached wamerican binutils tesseract-ocr imagemagick supervisor xpdf libreoffice-common \
     poppler-utils libpulse-dev swig autoconf automake libtool pkg-config zsh nodejs vim git man curl libmupdf-dev dnsutils \
-    python2 python-pip python3 python3-pip
+    python2 python-pip python3 python3-pip locales
 echo
 
 echo "Setting up Node 10 Repositories"
@@ -26,6 +26,14 @@ echo
 echo "Installing Additional Pacakges"
 apt-get update -y
 apt-get install -y nodejs postgresql-client-12
+echo
+
+echo "Setting up the en_US.UTF-8 locale"
+sed -i 's/^# *\(en_US.UTF-8\)/\1/' /etc/locale.gen
+echo -e "export LANG=en_US.UTF-8\nexport LANGUAGE=en_US.UTF-8" >/etc/profile.d/locale.sh
+locale-gen
+echo "Locales are being set as follows:"
+cat /etc/profile.d/locale.sh
 echo
 
 echo "Adding RDS Root Certificate"
