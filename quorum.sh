@@ -41,6 +41,9 @@ diffhotfix() {(
     git diff "$MERGE_BASE"
 )}
 
+# Github helpers
+alias openpr='browser "https://github.com/QuorumUS/quorum-site/compare/hotfix/$(latesthotfix)...$(git branch --show-current)"'
+
 # Open file in PyCharm
 alias ltedit='/Applications/PyCharm.app/Contents/bin/ltedit.sh'
 
@@ -51,12 +54,18 @@ alias q='cd "$QUORUM_ROOT"'
 alias jest='nvm run node "$QUORUM_ROOT/node_modules/.bin/jest"'
 alias jestd='nvm run node --inspect-brk "$QUORUM_ROOT/node_modules/.bin/jest" --runInBand'
 
+# Run the server
+alias runserver='./local-venv/bin/python manage.py runserver_plus 0.0.0.0:8000'
+
 # Run the frontend
 alias runfrontend='nvm run 10 ./node_modules/.bin/gulp'
 alias runfrontend_restart='while True; do nvm run 10 ./node_modules/.bin/gulp; done'
 
-# Docker compose with fullstack configuration
-alias fc='docker-compose -f docker-compose.yml -f docker/local/docker-compose.fullstack.yml'
+# Docker stuff
+alias docker_compose_fullstack='docker-compose -f docker-compose.yml -f docker/local/docker-compose.fullstack.yml'
+alias qq='docker run -v "$PWD:/code:delegated" -v "$HOME/dev/home:/root" --rm -it qrunner zsh'
+alias qp='docker run -v "$PWD:/code:delegated" -v "$HOME/dev/home:/root" -p 8000:8000 --rm -it qrunner zsh'
+alias build_qrunner='(cd "$QUORUM_TOOLS_DIR/qrunner" && docker build -t qrunner .)'
 
 # Checkout all files from the latest hotfix to QUORUM_ROOT
 alias checkouthotfix='git --work-tree="$QUORUM_ROOT" checkout "$(hotfix)" -- .'
@@ -64,19 +73,6 @@ alias checkouthotfix='git --work-tree="$QUORUM_ROOT" checkout "$(hotfix)" -- .'
 # SSH into bastion with port forwarding to both dev and prod
 alias bsc='ssh -L 5433:quovid-19.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432 -L 5434:quorum-production.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432 -Nnf bastion'
 
-# Docker Compose configuration commands, outdated
-alias dc='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml"'
-alias up='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml" up -d'
-alias logs='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml" logs -f --tail=10'
-alias managepy='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml" exec server python manage.py'
-alias qsh='docker-compose -f "$QUORUM_TOOLS_DIR/docker-compose.yml" run --rm server zsh'
-
 # Ripgrep, but only things we care about
 alias qg="rg -g '*.js' -g '*.jsx' -g '*.py'"
 
-# Commands for qrunner, the new docker config
-alias build_qrunner='(cd "$QUORUM_TOOLS_DIR/qrunner" && docker build -t qrunner .)'
-alias qq='docker run -v "$PWD:/code:delegated" -v "$HOME/dev/home:/root" --rm -it qrunner zsh'
-alias qp='docker run -v "$PWD:/code:delegated" -v "$HOME/dev/home:/root" -p 8000:8000 --rm -it qrunner zsh'
-
-alias openpr='browser "https://github.com/QuorumUS/quorum-site/compare/hotfix/$(latesthotfix)...$(git branch --show-current)"'

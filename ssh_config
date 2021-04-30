@@ -5,6 +5,8 @@ Host bastion
 
 Host quorum-update
 	HostName ec2-54-164-71-38.compute-1.amazonaws.com
+Host quorum-update2
+    HostName ec2-34-192-53-133.compute-1.amazonaws.com
 Host quorum-state-update
 	HostName ec2-52-1-24-252.compute-1.amazonaws.com
 Host quorum-staging
@@ -35,6 +37,7 @@ Host db-quorum-*
 	Port 27
 	User eric
 	StrictHostKeyChecking no
+Host db-*
 	ControlMaster no
 	ControlPath none
 	ControlPersist no
