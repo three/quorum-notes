@@ -59,7 +59,7 @@ alias runserver='./local-venv/bin/python manage.py runserver_plus 0.0.0.0:8000'
 
 # Run the frontend
 alias runfrontend='nvm run 10 ./node_modules/.bin/gulp'
-alias runfrontend_restart='while True; do nvm run 10 ./node_modules/.bin/gulp; done'
+alias runfrontend_restart='while True; do nvm run 10 --max-old-space-size=8192 ./node_modules/.bin/gulp; done'
 
 # Docker stuff
 alias docker_compose_fullstack='docker-compose -f docker-compose.yml -f docker/local/docker-compose.fullstack.yml'
