@@ -55,7 +55,7 @@ alias jest='nvm run node "$QUORUM_ROOT/node_modules/.bin/jest"'
 alias jestd='nvm run node --inspect-brk "$QUORUM_ROOT/node_modules/.bin/jest" --runInBand'
 
 # Run the server
-alias runserver='./local-venv/bin/python manage.py runserver_plus 0.0.0.0:8000'
+alias runserver='./venv/bin/python manage.py runserver_plus 0.0.0.0:8000'
 
 # Run the frontend
 alias runfrontend='nvm run 10 ./node_modules/.bin/gulp'
