@@ -1,0 +1,72 @@
+#!/usr/bin/env zsh
+set -eu
+
+PROG_NAME="$0"
+
+die() {
+    echo "$PROG_NAME: $1" >&2
+    exit 1
+}
+
+pause() {
+    echo "Press ENTER to continue"
+    read -s || true
+    echo
+}
+
+echo "Initial checks..."
+gh --version || die "Github CLI not on your path"
+git rev-parse || die "Git not found or not in git repo"
+CURRENT_BRANCH="$(git symbolic-ref -q HEAD)" || die "Unable to find current branch, ensure you are not in detached HEAD state"
+CURRENT_REMOTE="$(git for-each-ref --format='%(upstream:short)' "$CURRENT_BRANCH")"
+[[ -z "$CURRENT_REMOTE" ]] && die "Unable to find remote branch, push your work to an upstream branch"
+echo
+
+echo "Step 1: Prepare Branch"
+echo "Output of git status -bs:"
+git status -bs
+git diff --quiet HEAD || {
+    [[ $? != 1 ]] && die "git command failed"
+    echo "Warning: Your working directory differs from HEAD,"
+    echo "         Ensure the changes you want are committed"
+}
+[[ "$(git rev-parse "$CURRENT_BRANCH")" != "$(git rev-parse "$CURRENT_REMOTE")" ]] && {
+    [[ $? != 1 ]] && die "git command failed"
+    echo "Warning: Current and remote branches are not up to date"
+    echo "Here are the differences:"
+    git diff --name-status "$CURRENT_REMOTE" "$CURRENT_BRANCH"
+} || true
+echo "Review the above information carefully before continueing"
+pause
+
+echo "Step 2: Choose base branch"
+echo -n "Run git fetch before choosing base branch? "
+read -q && echo && git fetch || echo
+BASE_BRANCH="hotfix/$(latesthotfix)"
+BASE_BRANCH_LOCAL="origin/$BASE_BRANCH"
+MERGE_BASE="$(git merge-base HEAD "$BASE_BRANCH_LOCAL")"
+echo "Selected Branch: $BASE_BRANCH (other branchs not supported)"
+git --no-pager diff --name-status "$MERGE_BASE" "$CURRENT_BRANCH"
+pause
+
+cat <<EOF
+Step 3: Review Diff
+Before creating a PR, be sure that
+  - Every function/component has a documentation string
+  - Every function/component has adequate test coverage
+  - Think through the logical branches of code and identify parts that would
+    have significant consequences if they did not work correctly.
+  - Proofread your PR
+source: https://quorumanalytics.slack.com/archives/C3LEYG0C8/p1619615104291500
+EOF
+echo -n "View diff? "
+read -q && git diff "$(git merge-base HEAD "origin/$BASE_BRANCH")" HEAD || true
+echo
+pause
+
+echo "Step 4: Open the PR"
+echo "(Github CLI will open to complete this step)"
+gh pr create \
+    --assignee '@me' \
+    --base "$BASE_BRANCH" \
+    --label "Hotfix (Application servers)"

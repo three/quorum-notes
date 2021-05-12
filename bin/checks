@@ -19,12 +19,12 @@ source "$HOME/dev/qsite-local/venv/bin/activate"
 export PYTHONPATH="$(pwd)"
 echo
 
-echo "Detecting if the environment has darker..."
-which darker >/dev/null && {
-    darker --version
-    export USE_DARKER=1
-} || echo "Darker not detected. USE_DARKER=${USE_DARKER:-unset}"
-echo
+# echo "Detecting if the environment has darker..."
+# which darker >/dev/null && {
+#     darker --version
+#     export USE_DARKER=1
+# } || echo "Darker not detected. USE_DARKER=${USE_DARKER:-unset}"
+# echo
 
 echo "Searching for files to check..."
 COMMON_ANCESTOR="$(git merge-base HEAD origin/hotfix/$(latesthotfix))"
@@ -42,7 +42,7 @@ RETURN_CODE=0
 }
 
 echo "Checking darker..."
-if which darker >/dev/null
+if which darker >/dev/null && "${USE_DARKER:-0}" = 1
 then
     echo "Darker Version: $(darker --version)"
     if darker --check -r "$COMMON_ANCESTOR" --line-length 120 . >/dev/null
