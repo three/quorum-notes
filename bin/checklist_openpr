@@ -64,7 +64,13 @@ read -q && git diff "$(git merge-base HEAD "origin/$BASE_BRANCH")" HEAD || true
 echo
 pause
 
-echo "Step 4: Open the PR"
+echo "Step 4: Run checks"
+echo -n "Run checks? "
+read -q && checks | less || true
+echo
+pause
+
+echo "Step 5: Open the PR"
 echo "(Github CLI will open to complete this step)"
 gh pr create \
     --assignee '@me' \
