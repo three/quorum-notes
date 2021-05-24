@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+set -eu
+
+git fetch origin
+
+GIT_EMPTY_TREE_COMMIT="$(git hash-object -t tree /dev/null)"
+JIRA_LOGS_BRANCH="temp/eric-jira-logs"
+CURRENT_LOG_HEAD="$(git rev-parse "refs/remotes/origin/$JIRA_LOGS_BRANCH" 2>/dev/null || true)"
+
+if [[ -z "$CURRENT_LOG_HEAD" ]]; then
+    CURRENT_LOG_HEAD="$(git commit-tree "$GIT_EMPTY_TREE_COMMIT" -m "Empty Commit")";
+fi
+
+NEXT_LOG_HEAD="$(git commit-tree "$GIT_EMPTY_TREE_COMMIT" -m "$1" -p "$CURRENT_LOG_HEAD")"
+git push origin "${NEXT_LOG_HEAD}:refs/heads/$JIRA_LOGS_BRANCH"
