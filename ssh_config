@@ -23,7 +23,7 @@ Host quorum-instagram
 	HostName ec2-52-206-93-76.compute-1.amazonaws.com
 
 Host db-quorum-dev
-    LocalForward 5433 quovid-19.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432
+    LocalForward 5433 oh-god-are-we-allowed-to-terminate-the-dev-db.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432
 Host db-quorum-prod
 	LocalForward 5434 quorum-production.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432
 

@@ -1,7 +1,9 @@
 #!/usr/bin/env zsh
 set -eu
 
-git fetch origin
+zparseopts -D -E -a OPTS -fetch
+
+[[ ! -z "$OPTS" ]] && git fetch origin
 
 GIT_EMPTY_TREE_COMMIT="$(git hash-object -t tree /dev/null)"
 JIRA_LOGS_BRANCH="temp/eric-jira-logs"

@@ -1,0 +1,2 @@
+#!/usr/bin/env zsh
+kill -- "$(cat "$HOME/pids/$1.pid")"

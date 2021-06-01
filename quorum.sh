@@ -55,7 +55,7 @@ alias jest='nvm run node "$QUORUM_ROOT/node_modules/.bin/jest"'
 alias jestd='nvm run node --inspect-brk "$QUORUM_ROOT/node_modules/.bin/jest" --runInBand'
 
 # Run the server
-alias runserver='./venv/bin/python manage.py runserver_plus 0.0.0.0:8000'
+# alias runserver='./venv/bin/python manage.py runserver_plus 0.0.0.0:8000'
 
 # Run the frontend
 alias runfrontend='nvm run 10 ./node_modules/.bin/gulp'
@@ -74,7 +74,7 @@ alias build_qrunner='(cd "$QUORUM_TOOLS_DIR/qrunner" && docker build -t qrunner 
 alias checkouthotfix='git --work-tree="$QUORUM_ROOT" checkout "$(hotfix)" -- .'
 
 # SSH into bastion with port forwarding to both dev and prod
-alias bsc='ssh -L 5433:quovid-19.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432 -L 5434:quorum-production.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432 -Nnf bastion'
+alias bsc='ssh -L 5433:oh-god-are-we-allowed-to-terminate-the-dev-db.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432 -L 5434:quorum-production.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432 -Nnf bastion'
 
 # Ripgrep, but only things we care about
 alias qg="rg -g '*.js' -g '*.jsx' -g '*.py'"
