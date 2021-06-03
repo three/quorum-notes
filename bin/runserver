@@ -1,3 +1,7 @@
 #!/usr/bin/env zsh
-echo $$ >"$HOME/pids/runserver.pid"
+PID_FILE="$HOME/pids/runserver.pid"
+[[ -f "$PID_FILE" ]] && \
+    ps | grep -q "^\s*$(cat "$PID_FILE").*python manage.py runserver_plus" && \
+    kill -- "$(cat "$PID_FILE")" || true
+echo $$ >"$PID_FILE"
 exec ./venv/bin/python manage.py runserver_plus 0.0.0.0:8000 "$@"
