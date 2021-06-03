@@ -1,0 +1,16 @@
+#!/usr/bin/env zsh
+TEMP_DIR="$(mktemp -d)"
+
+echo "Run checks?"
+read -q && (checks | less) || echo
+
+COMMIT_FILE="$TEMP_DIR/COMMIT_EDITMSG"
+tee "$COMMIT_FILE" <<EOF >"$COMMIT_FILE"
+<$(git rev-parse --abbrev-ref HEAD | sed 's/^feature\///')> 
+# ------------------------ >8 ------------------------
+#
+$(git diff --staged)
+EOF
+"$EDITOR" "$COMMIT_FILE"
+git commit -F "$COMMIT_FILE"
+rm -rf "$TEMP_DIR"
