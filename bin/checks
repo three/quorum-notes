@@ -30,14 +30,17 @@ echo "Searching for files to check..."
 COMMON_ANCESTOR="$(git merge-base HEAD origin/hotfix/$(latesthotfix))"
 echo "Common Ancestor: $COMMON_ANCESTOR"
 ALTERED_FILES="$(git diff --name-only $COMMON_ANCESTOR)"
-[[ -z "$ALTERED_FILES" ]] && (
+FILES_LISTING="$(git ls-files)"
+RELEVANT_FILES="$(comm -12 =(sort <<<"$ALTERED_FILES") =(sort <<<"$FILES_LISTING"))"
+
+[[ -z "$RELEVANT_FILES" ]] && (
     echo "No files to check!"
     return 0
 )
 echo
 
 RETURN_CODE=0
-(echo "$ALTERED_FILES" | xargs python tests/check/__main__.py) || {
+(echo "$RELEVANT_FILES" | xargs python tests/check/__main__.py) || {
     RETURN_CODE="$?"
 }
 

@@ -1,4 +1,22 @@
 #!/usr/bin/env zsh
+set -eu
+
+zparseopts -help=HELP
+[[ -n $HELP ]] && cat <<EOF && exit 0 || true
+Usage: latesthotfix [--help]
+
+Find and print the version number of the largest remote
+hotfix branch. For instance, if you wanted to checkout the
+latest hotfix branch you could do,
+
+    $ git fetch
+    $ git checkout "hotfix/$(latesthotfix)"
+
+Options:
+
+    --help
+        Print this message
+EOF
 
 git branch -a | \
     grep 'remotes/origin/hotfix' | \

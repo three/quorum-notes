@@ -1,6 +1,21 @@
 #!/usr/bin/env zsh
 set -eu
 
+zparseopts -help=HELP
+[[ -n "$HELP" ]] && cat <<EOF && exit 1 || true
+Usage:
+    openpr [--help]
+
+Description:
+    Guides you through the process of opening a PR on
+    the latest hotfix branch. This will run checks for you
+    and remind you to look over your code.
+
+Options:
+    --help
+        Print this message
+EOF
+
 PROG_NAME="$0"
 
 die() {

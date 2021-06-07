@@ -49,6 +49,7 @@ alias ltedit='/Applications/PyCharm.app/Contents/bin/ltedit.sh'
 
 # Change directory to quorum-site
 alias q='cd "$QUORUM_ROOT"'
+alias qq='cd "$QUORUM_ROOT" && {source ./venv/bin/activate; nvm use}'
 
 # Run Jest tests
 alias jest='nvm run node "$QUORUM_ROOT/node_modules/.bin/jest"'
@@ -66,7 +67,7 @@ alias sp='./venv/bin/python manage.py shell_plus'
 
 # Docker stuff
 alias docker_compose_fullstack='docker-compose -f docker-compose.yml -f docker/local/docker-compose.fullstack.yml'
-alias qq='docker run -v "$PWD:/code:delegated" -v "$HOME/dev/home:/root" --rm -it qrunner zsh'
+#alias qq='docker run -v "$PWD:/code:delegated" -v "$HOME/dev/home:/root" --rm -it qrunner zsh'
 alias qp='docker run -v "$PWD:/code:delegated" -v "$HOME/dev/home:/root" -p 8000:8000 --rm -it qrunner zsh'
 alias build_qrunner='(cd "$QUORUM_TOOLS_DIR/qrunner" && docker build -t qrunner .)'
 
