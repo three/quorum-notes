@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 export USE_LOCAL_DB=True
 export USE_PROD_DB=False
+export DOCKER_TESTING_LOCAL_ES=True
 python manage.py flush --no-input
 python manage.py migrate --run-syncdb --settings=test_settings
 python manage.py seed_cypress

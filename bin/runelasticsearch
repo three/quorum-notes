@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+sudo -u elasticsearch /bin/sh - <<EOF
+set -eu
+export ES_PATH_CONF="$QUORUM_ROOT/tests/elasticsearch"
+elasticsearch
+EOF

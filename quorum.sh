@@ -80,3 +80,4 @@ alias bsc='ssh -L 5433:oh-god-are-we-allowed-to-terminate-the-dev-db.ck4wgl7u5wc
 # Ripgrep, but only things we care about
 alias qg="rg -g '*.js' -g '*.jsx' -g '*.py'"
 
+alias runes='sudo -u elasticsearch elasticsearch -E http.port=9201'

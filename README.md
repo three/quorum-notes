@@ -1,5 +1,7 @@
 # Eric's Quorum Config
 
+The anti-docker Quorum configuration
+
 ## Setting up Quorum
 
 As a prereq you need https://www.macports.org/. If you haven't used macports
@@ -20,6 +22,7 @@ curl
 # Optional services
 nginx
 dnsmasq
+elasticsearch
 
 # Python3 tools
 python3
@@ -67,3 +70,37 @@ easy choice that can be installed with `brew install --cask postgres`).
 ```
 USE_LOCAL_DB=True ./venv/bin/python manage.py test app -k
 ```
+
+## Elasticsearch
+
+Get the package from macports.
+
+Then, you need to copy over the config files from
+`quorum-site/tests/elasticsearch`. For the macports version
+these need to go in `/opt/local/etc/elasticsearch` and be
+permissioned to `elasticsearch:elasticsearch`.
+
+There's a few plugins you need to install listed in
+`quorum-site/Dockerfile-elasticsearch-local`. The command is
+in a slightly different spot and this needs to be installed
+as elasticsearch:
+
+```
+$ sudo -u elasticsearch \
+    /opt/local/share/elasticsearch/bin/elasticsearch-plugin \
+    install analysis-kuromoji analysis-icu analysis-icu
+```
+
+Then just run the elasticsearch command as elasticsearch to
+start the server.
+
+```
+$ sudo -u elasticsearch elasticsearch
+```
+
+For the application to recognize you're using a local server
+you need two things:
+
+ * `DOCKER_TESTING_LOCAL_ES=True`
+ * `elasticsearch` host needs to point to localhost (use
+   `/etc/hosts`)
