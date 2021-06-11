@@ -58,9 +58,6 @@ alias qq='quorum_setup_env'
 alias jest='nvm run node "$QUORUM_ROOT/node_modules/.bin/jest"'
 alias jestd='nvm run node --inspect-brk "$QUORUM_ROOT/node_modules/.bin/jest" --runInBand'
 
-# Run the server
-# alias runserver='./venv/bin/python manage.py runserver_plus 0.0.0.0:8000'
-
 # Run the frontend
 alias runfrontend='nvm run 10 ./node_modules/.bin/gulp'
 alias runfrontend_restart='while True; do nvm run 10 --max-old-space-size=8192 ./node_modules/.bin/gulp; done'
