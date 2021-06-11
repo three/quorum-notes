@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+set -eu -o pipefail
+
+DB_NAME=nondockerized_cypress_local_db
+dropdb "$DB_NAME" || echo "Failed dropping $DB_NAME"
+createdb "$DB_NAME"
+python manage.py migrate --run-syncdb --use_nondockerized_local_db --settings=test_settings

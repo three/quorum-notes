@@ -1,0 +1,34 @@
+#!/usr/bin/env zsh
+set -eu -o pipefail
+zparseopts -D -E -F -safe=OPT_SAFE -help=OPT_HELP -no-flush=OPT_NO_FLUSH
+[[ -n $OPT_HELP ]] && cat <<EOF && exit 0
+Flushes the local database and calls seed_cypress. This always uses the
+Non-Dockerized Local DB setup.
+
+Opts:
+    --safe
+        Fail if TCP connection test succeeds on port 5433 or 5434
+EOF
+
+if [[ -n $OPT_SAFE ]]; then
+    if nc -z localhost 5433; then
+        exit 1
+    else
+        [[ $? = 1 ]] || exit 1
+    fi
+    if nc -z localhost 5434; then
+        exit 1
+    else
+        [[ $? = 1 ]] || exit 1
+    fi
+fi
+
+
+export USE_NONDOCKERIZED_LOCAL_DB=True
+export USE_PROD_DB=False
+export DOCKER_TESTING_LOCAL_ES="${DOCKER_TESTING_LOCAL_ES:=True}"
+
+if [[ -z $OPT_NO_FLUSH ]]; then
+    (set -x; python manage.py flush --no-input --settings=test_settings --use_nondockerized_local_db)
+fi
+(set -x; python manage.py seed_cypress --settings=test_settings --use_nondockerized_local_db)

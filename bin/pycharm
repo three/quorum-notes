@@ -1,0 +1,2 @@
+#!/usr/bin/env zsh
+open -na "PyCharm.app" --args $@

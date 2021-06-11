@@ -3,9 +3,7 @@ set -eu -o pipefail
 zparseopts -D -E -F l=OPT_LOCAL -help=OPT_HELP
 
 [[ -n $OPT_HELP ]] && cat <<EOF && exit 0
-Calls manage.py runserver_plus
-
-Manages a pidfile at \$HOME/pids/runserver.pid
+Calls manage.py shell_plus
 
 Options:
     -l
@@ -17,9 +15,4 @@ if [[ -n $OPT_LOCAL ]]; then
     export DOCKER_TESTING_LOCAL_ES=True
 fi
 
-PID_FILE="$HOME/pids/runserver.pid"
-[[ -f "$PID_FILE" ]] && \
-    ps -p "$(cat "$PID_FILE")" | grep -q 'python\s+manage.py\s+runserver' && \
-    kill -- "$(cat "$PID_FILE")" || true
-echo $$ >"$PID_FILE"
-exec ./venv/bin/python manage.py runserver_plus
+exec python manage.py shell_plus

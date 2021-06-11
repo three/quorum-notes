@@ -1,14 +1,37 @@
 #!/usr/bin/env zsh
 set -eu
+zparseopts -D -E -fetch=OPT_FETCH -help=OPT_HELP b:=OPT_BRANCH
+[[ -n $OPT_HELP ]] && cat <<EOF && exit 0
+Logs and pushes an empty commit to a  remote branch without effecting
+the current staging or index. Requires the remote be origin.
 
-zparseopts -D -E -a OPTS -fetch
+Note: This only manipulates *remote* branches, it does not touch your
+local branches.
 
-[[ ! -z "$OPTS" ]] && git fetch origin
+Options
+    --fetch
+        Run git fetch origin before doing anything
+    -b<branch>
+        Branch to use, will push to refs/remotes/origin/<branch>
+
+Example Usage:
+    log_jira 'QI-1234 #time 1h'
+
+See Also
+    https://confluence.atlassian.com/fisheye/using-smart-commits-960155400.html
+EOF
+
+[[ -n $OPT_FETCH ]] && git fetch origin
+if [[ -n $OPT_BRANCH ]]; then
+    JIRA_LOGS_BRANCH="${OPT_BRANCH[2]}"
+else
+    JIRA_LOGS_BRANCH="temp/eric-jira-logs"
+fi
 
 GIT_EMPTY_TREE_COMMIT="$(git hash-object -t tree /dev/null)"
-JIRA_LOGS_BRANCH="temp/eric-jira-logs"
 CURRENT_LOG_HEAD="$(git rev-parse "refs/remotes/origin/$JIRA_LOGS_BRANCH" 2>/dev/null || true)"
 
+# If the branch doesn't exist, create it with a completely empty commit
 if [[ -z "$CURRENT_LOG_HEAD" ]]; then
     CURRENT_LOG_HEAD="$(git commit-tree "$GIT_EMPTY_TREE_COMMIT" -m "Empty Commit")";
 fi

@@ -23,14 +23,6 @@ export PATH="$QUORUM_TOOLS_DIR/bin:$PATH"
 
 QUORUM_DJANGIO_FILES="QuorumMobile/app/constants/djangio_cache.json _custom_event_djangio_cache.json _djangio_cache.json _new_grassroots_djangio_cache.json _unsubscribed_djangio_cache.json"
 
-latesthotfix() {
-    git branch -a | \
-        grep 'remotes/origin/hotfix' | \
-        grep -o '[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*' | \
-        sort -rV |
-        head -n 1
-}
-
 hotfix() {
     echo "origin/hotfix/$(latesthotfix)"
 }
@@ -41,6 +33,17 @@ diffhotfix() {(
     git diff "$MERGE_BASE"
 )}
 
+quorum_setup_env() {
+    cd "$QUORUM_ROOT" && {
+        source ./venv/bin/activate
+        nvm use
+        PATH="$PATH:$(pwd)/node_modules/.bin"
+    }
+}
+
+# Override bad default behaviour of npx
+alias npx='npx --no-install'
+
 # Github helpers
 alias openpr='browser "https://github.com/QuorumUS/quorum-site/compare/hotfix/$(latesthotfix)...$(git branch --show-current)"'
 
@@ -49,7 +52,7 @@ alias ltedit='/Applications/PyCharm.app/Contents/bin/ltedit.sh'
 
 # Change directory to quorum-site
 alias q='cd "$QUORUM_ROOT"'
-alias qq='cd "$QUORUM_ROOT" && {source ./venv/bin/activate; nvm use}'
+alias qq='quorum_setup_env'
 
 # Run Jest tests
 alias jest='nvm run node "$QUORUM_ROOT/node_modules/.bin/jest"'

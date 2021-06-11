@@ -78,7 +78,9 @@ Get the package from macports.
 Then, you need to copy over the config files from
 `quorum-site/tests/elasticsearch`. For the macports version
 these need to go in `/opt/local/etc/elasticsearch` and be
-permissioned to `elasticsearch:elasticsearch`.
+permissioned to `elasticsearch:elasticsearch`. You will need
+to remove the `network.host` option in `elasticsearch.yml`
+or elasticsearch will fail to start.
 
 There's a few plugins you need to install listed in
 `quorum-site/Dockerfile-elasticsearch-local`. The command is
