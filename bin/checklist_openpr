@@ -4,7 +4,7 @@ set -eu
 zparseopts -help=HELP
 [[ -n "$HELP" ]] && cat <<EOF && exit 1 || true
 Usage:
-    openpr [--help]
+    checklist_openpr [--help]
 
 Description:
     Guides you through the process of opening a PR on

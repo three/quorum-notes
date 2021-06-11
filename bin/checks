@@ -1,9 +1,18 @@
 #!/usr/bin/env zsh
+set -eu -o pipefail
+zparseopts -D -E -F -help=OPT_HELP -darker=OPT_DARKER
+[[ -n $OPT_HELP ]] && cat <<EOF && exit 0
+Usage
+    checks [--darker]
 
-# Bash Boilerplate Checks
-set -o errexit
-set -o pipefail
+Description
+    Runs the style checker on all files modified since hotfix
 
+Bugs
+    Darker support is more or less broken
+EOF
+
+# This might not be necessary
 source "$QUORUM_TOOLS_DIR/quorum.sh"
 
 echo "Ensuring the environment has node..."
@@ -19,13 +28,17 @@ source "$HOME/dev/qsite-local/venv/bin/activate"
 export PYTHONPATH="$(pwd)"
 echo
 
-# echo "Detecting if the environment has darker..."
-# which darker >/dev/null && {
-#     darker --version
-#     export USE_DARKER=1
-# } || echo "Darker not detected. USE_DARKER=${USE_DARKER:-unset}"
-# echo
+if [[ -n $OPT_DARKER ]]; then
+    echo "Detecting if the environment has darker..."
+    which darker >/dev/null && {
+        darker --version
+        export USE_DARKER=1
+    } || (echo "Darker not detected. USE_DARKER=${USE_DARKER:-unset}" && exit 1)
+    echo
+fi
 
+# We define "files modified since hotfix" as files that currently exist on the filesystem
+# whcih appear in the diff between the common ancestor of HEAD and hotfix.
 echo "Searching for files to check..."
 COMMON_ANCESTOR="$(git merge-base HEAD origin/hotfix/$(latesthotfix))"
 echo "Common Ancestor: $COMMON_ANCESTOR"
@@ -44,21 +57,23 @@ RETURN_CODE=0
     RETURN_CODE="$?"
 }
 
-echo "Checking darker..."
-if which darker >/dev/null && "${USE_DARKER:-0}" = 1
-then
-    echo "Darker Version: $(darker --version)"
-    if darker --check -r "$COMMON_ANCESTOR" --line-length 120 . >/dev/null
+if [[ $OPT_DARKER ]]; then
+    echo "Checking darker..."
+    if which darker >/dev/null && "${USE_DARKER:-0}" = 1
     then
-        echo "Passed"
+        echo "Darker Version: $(darker --version)"
+        if darker --check -r "$COMMON_ANCESTOR" --line-length 120 . >/dev/null
+        then
+            echo "Passed"
+        else
+            echo "Darker returned $?"
+            [[ "$RETURN_CODE" == 0 ]] && RETURN_CODE=1
+        fi
     else
-        echo "Darker returned $?"
-        [[ "$RETURN_CODE" == 0 ]] && RETURN_CODE=1
+        echo "Darker not in your PATH, skipping"
     fi
-else
-    echo "Darker not in your PATH, skipping"
+    echo
 fi
-echo
 
 echo "Exit Status $RETURN_CODE"
 exit $?
