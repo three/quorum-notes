@@ -1,0 +1,13 @@
+I haven't used this in a while but qrunner is designed to be a Docker container
+capable of running both the frontend or backend. For instance you could do
+something like,
+
+    docker run \
+        -v "$PWD:/code:delegated" \
+        -v "$HOME/dev/home:/root" \
+        -v "$QUORUM_TOOLS_DIR:/opt/quorumtools" \
+        --rm -it \
+        python manage.py runserver_plus 0.0.0.0:8000
+
+I think this was useful for getting Quorum running on Linux in an isolated
+environment. There was probably more setup that was necessary.

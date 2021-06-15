@@ -2,6 +2,9 @@
 
 The anti-docker Quorum configuration
 
+These are various notes/tools I've taken over the last year that I've tried to
+clean up/document before committing to quorum-site. Comes without warranty.
+
 ## Setting up Quorum
 
 As a prereq you need https://www.macports.org/. If you haven't used macports
@@ -106,3 +109,16 @@ you need two things:
  * `DOCKER_TESTING_LOCAL_ES=True`
  * `elasticsearch` host needs to point to localhost (use
    `/etc/hosts`)
+
+## Bin
+
+Most of the tools I have in `bin` are documented and you can see what they do
+by passing `--help`. Some of them are not and you probably shouldn't trust them.
+
+A lot of commands assume your in the top level of the quorum-site dir.
+
+## ZSH Config
+
+This is the `quorum.sh` file. It's moderately specific to my setup. One thing
+that's a requirement for a lot of things (including in `bin` commands) is the
+presence of nvm.
