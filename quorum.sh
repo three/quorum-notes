@@ -7,14 +7,6 @@ if [[ ! -d "$QUORUM_ROOT" ]]; then
     export QUORUM_ROOT="$HOME/dev/quorum-site"
 fi
 
-if [[ ! -d "$QUORUM_REMOTE_SSH" ]]; then
-    export QUORUM_REMOTE_SSH="qdev@patrick.spongebob.link"
-fi
-
-if [[ ! -d "$QUORUM_REMOTE_ROOT" ]]; then
-    export QUORUM_REMOTE_ROOT="/home/qdev/quorum-site"
-fi
-
 if [[ ! -d "$QUORUM_TOOLS_DIR" ]]; then
     export QUORUM_TOOLS_DIR="$(dirname "$(realpath "$0")")"
 fi
@@ -81,3 +73,6 @@ alias bsc='ssh -L 5433:oh-god-are-we-allowed-to-terminate-the-dev-db.ck4wgl7u5wc
 alias qg="rg -g '*.js' -g '*.jsx' -g '*.py'"
 
 alias runes='sudo -u elasticsearch elasticsearch -E http.port=9201'
+
+alias reload_quorum='source "$QUORUM_TOOLS_DIR/quorum.sh"'
+mkwip() { git switch -c "wip/$1" "$(hotfix)" }

@@ -1,4 +1,5 @@
 #!/bin/sh
+# This file is outdated
 echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
 echo '!!!! OPENING UP DBSHELL AS USER UPDATE !!!'
 echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
