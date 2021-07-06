@@ -1,0 +1,59 @@
+#!/usr/bin/env zsh
+set -eu -o pipefail
+zparseopts -D -E -F -frontend=OPT_FRONTEND -backend=OPT_BACKEND -help=OPT_HELP -no-sanity=OPT_NO_SANITY
+[[ -n $OPT_HELP ]] && cat <<EOF && exit 0 || true
+Install or reinstall local dependencies.
+
+By default installs both node and python dependencies.
+
+Options:
+    --frontend
+        Install node_modules dependencies only
+    --backend
+        Install backend dependencies only
+    --no-sanity
+        Don't perform sanity checks
+EOF
+
+source "$(dirname -- "$0")/helpers.zsh"
+
+if [[ -z $OPT_NO_SANITY ]]; then
+    echo "Running Sanity Checks"
+    NODE_VERSION="$(node --version)"
+    NPM_VERSION="$(npm --version)"
+    PYTHON_VERSION="$(python --version 2>&1)"
+    PIP_VERSION="$(pip --version)"
+    GIT_TOPLEVEL="$(git rev-parse --show-toplevel)"
+    OS="$(uname -s)"
+    echo "node version: $NODE_VERSION"
+    echo "npm version: $NPM_VERSION"
+    echo "python version: $PYTHON_VERSION"
+    echo "pip version: $PIP_VERSION"
+    echo "git toplevel: $GIT_TOPLEVEL"
+    echo "operating system: $OS"
+    grep -q 'Python 2' =(echo $PYTHON_VERSION) || die "Invalid python version"
+    [[ $GIT_TOPLEVEL = "$(pwd)" ]] || die "Invalid git toplevel"
+    grep -q $(cat .nvmrc) =(echo $NODE_VERSION) || die "Invalid node version"
+    [[ $OS != Darwin ]] || xcode-select --print-path || die "Please install xcode"
+    pkgutil --pkg-info=com.apple.pkg.CLTools_Executables
+    echo "Sanity check passed"
+    echo
+fi
+
+[[ -z $OPT_FRONTEND && -z $OPT_BACKEND ]] && {
+    OPT_FRONTEND=1
+    OPT_BACKEND=1
+} || true
+
+echo "Tracing will be enabled."
+set -x
+
+if [[ -n $OPT_FRONTEND ]]; then
+    (cd QuorumDesign && npm ci)
+    npm ci
+    (cd QuorumGrassroots && npm ci)
+fi
+
+if [[ -n $OPT_BACKEND ]]; then
+    pip install -r tests/requirements.txt
+fi

@@ -1,6 +1,10 @@
 #!/usr/bin/env zsh
 set -eu -o pipefail
-zparseopts -D -E -F -safe=OPT_SAFE -help=OPT_HELP -no-flush=OPT_NO_FLUSH
+zparseopts -D -E -F \
+    -safe=OPT_SAFE \
+    -help=OPT_HELP \
+    -no-flush=OPT_NO_FLUSH \
+    -settings:=OPT_SETTINGS
 [[ -n $OPT_HELP ]] && cat <<EOF && exit 0
 Flushes the local database and calls seed_cypress. This always uses the
 Non-Dockerized Local DB setup.
@@ -28,7 +32,13 @@ export USE_NONDOCKERIZED_LOCAL_DB=True
 export USE_PROD_DB=False
 export DOCKER_TESTING_LOCAL_ES="${DOCKER_TESTING_LOCAL_ES:=True}"
 
-if [[ -z $OPT_NO_FLUSH ]]; then
-    (set -x; python manage.py flush --no-input --settings=test_settings --use_nondockerized_local_db)
+if [[ -n $OPT_SETTINGS ]]; then
+    SETTINGS="--settings=${OPT_SETTINGS[2]}"
+else
+    SETTINGS=""
 fi
-(set -x; python manage.py seed_cypress --settings=test_settings --use_nondockerized_local_db)
+
+if [[ -z $OPT_NO_FLUSH ]]; then
+    (set -x; python manage.py flush --no-input $SETTINGS --use_nondockerized_local_db)
+fi
+(set -x; python manage.py seed_cypress $SETTINGS --use_nondockerized_local_db)

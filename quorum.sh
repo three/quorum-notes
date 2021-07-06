@@ -38,6 +38,7 @@ alias npx='npx --no-install'
 
 # Github helpers
 alias openpr='browser "https://github.com/QuorumUS/quorum-site/compare/hotfix/$(latesthotfix)...$(git branch --show-current)"'
+opencommit() {browser "https://github.com/QuorumUS/quorum-site/commit/$(git rev-parse $1)"}
 
 # Open file in PyCharm
 alias ltedit='/Applications/PyCharm.app/Contents/bin/ltedit.sh'
@@ -46,13 +47,19 @@ alias ltedit='/Applications/PyCharm.app/Contents/bin/ltedit.sh'
 alias q='cd "$QUORUM_ROOT"'
 alias qq='quorum_setup_env'
 
-# Run Jest tests
-alias jest='nvm run node "$QUORUM_ROOT/node_modules/.bin/jest"'
-alias jestd='nvm run node --inspect-brk "$QUORUM_ROOT/node_modules/.bin/jest" --runInBand'
+# Run jest tests in debugger
+jestd() {
+    JEST_EXECUTABLE="$(whence -p jest)"
+    if [[ -z $JEST_EXECUTABLE ]]; then
+        echo jest not found on \$PATH >&2
+        return 1
+    fi
+    node inspect -- "$JEST_EXECUTABLE" $@
+}
 
 # Run the frontend
-alias runfrontend='nvm run 10 ./node_modules/.bin/gulp'
-alias runfrontend_restart='while True; do nvm run 10 --max-old-space-size=8192 ./node_modules/.bin/gulp; done'
+alias runfrontend='nvm run ./node_modules/.bin/gulp'
+alias runfrontend_restart='while True; do nvm run --max-old-space-size=8192 ./node_modules/.bin/gulp; done'
 
 alias testpy='LOCAL_PG=1 ./venv/bin/python manage.py test'
 alias sp='./venv/bin/python manage.py shell_plus'
@@ -72,7 +79,8 @@ alias bsc='ssh -L 5433:oh-god-are-we-allowed-to-terminate-the-dev-db.ck4wgl7u5wc
 # Ripgrep, but only things we care about
 alias qg="rg -g '*.js' -g '*.jsx' -g '*.py'"
 
-alias runes='sudo -u elasticsearch elasticsearch -E http.port=9201'
+alias runes='sudo -u elasticsearch elasticsearch'
+alias clear_elasticsearch='curl -XDELETE --user quorum_test:yULYQFAc7+EPbjdwFZoxUBf8PT8= localhost:9200/_all'
 
 alias reload_quorum='source "$QUORUM_TOOLS_DIR/quorum.sh"'
 mkwip() { git switch -c "wip/$1" "$(hotfix)" }

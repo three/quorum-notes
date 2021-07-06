@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 set -eu -o pipefail
-zparseopts -D -E -F l=OPT_LOCAL -help=OPT_HELP
+zparseopts -D -E -F p=OPT_PROD l=OPT_LOCAL -help=OPT_HELP
 
 [[ -n $OPT_HELP ]] && cat <<EOF && exit 0
 Calls manage.py shell_plus
@@ -9,6 +9,15 @@ Options:
     -l
         Sets environment variables to local options beforehand
 EOF
+
+if [[ -n $OPT_LOCAL && -n $OPT_PROD ]]; then
+    echo "Refusing to set both prod and local environment variables." >&2
+    exit 1
+fi
+
+if [[ -n $OPT_PROD ]]; then
+    export USE_PROD_DB=True
+fi
 
 if [[ -n $OPT_LOCAL ]]; then
     export USE_NONDOCKERIZED_LOCAL_DB=True

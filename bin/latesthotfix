@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
-set -eu
+set -eu -o pipefail
 
-zparseopts -help=HELP
+zparseopts -help=HELP -fetch=OPT_FETCH
 [[ -n $HELP ]] && cat <<EOF && exit 0 || true
 Usage: latesthotfix [--help]
 
@@ -10,13 +10,19 @@ hotfix branch. For instance, if you wanted to checkout the
 latest hotfix branch you could do,
 
     $ git fetch
-    $ git checkout "hotfix/$(latesthotfix)"
+    $ git checkout "hotfix/\$(latesthotfix)"
 
 Options:
 
     --help
         Print this message
+    --fetch
+        Run "git fetch" first
 EOF
+
+if [[ -n $OPT_FETCH ]]; then
+    git fetch -q
+fi
 
 git branch -a | \
     grep 'remotes/origin/hotfix' | \
