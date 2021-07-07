@@ -3,9 +3,11 @@ Host bastion
 	User eric
 	Port 27
 
+Host quorum-*
+	User ubuntu
+    IdentityFile ~/.ssh/quorum-fall-2020.pem
+    ProxyJump bastion
 Host quorum-update
-	HostName ec2-54-164-71-38.compute-1.amazonaws.com
-Host quorum-update2
     HostName ec2-34-192-53-133.compute-1.amazonaws.com
 Host quorum-state-update
 	HostName ec2-52-1-24-252.compute-1.amazonaws.com
@@ -20,25 +22,12 @@ Host quorum-gr
 Host quorum-gr2
 	HostName ec2-34-229-47-69.compute-1.amazonaws.com
 Host quorum-instagram
-	HostName ec2-52-206-93-76.compute-1.amazonaws.com
+    HostName ec2-52-206-93-76.compute-1.amazonaws.com
 
-Host db-quorum-dev
+Host qdb
+    HostName ec2-52-206-129-115.compute-1.amazonaws.com
+    User eric
+    Port 27
     LocalForward 5433 oh-god-are-we-allowed-to-terminate-the-dev-db.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432
-Host db-quorum-prod
 	LocalForward 5434 quorum-production.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432
-
-Host quorum-*
-	User ubuntu
-	IdentityFile ~/.ssh/quorum-fall-2020.pem
-	ProxyCommand ssh -A bastion -W %h:%p
-	StrictHostKeyChecking no
-Host db-quorum-*
-	HostName ec2-52-206-129-115.compute-1.amazonaws.com
-	Port 27
-	User eric
-	StrictHostKeyChecking no
-Host db-*
-	ControlMaster no
-	ControlPath none
-	ControlPersist no
-	ExitOnForwardFailure yes
+    ExitOnForwardFailure yes

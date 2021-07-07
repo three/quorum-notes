@@ -8,6 +8,8 @@ Calls manage.py shell_plus
 Options:
     -l
         Sets environment variables to local options beforehand
+    -p
+        Sets environment variables to prod options beforehand
 EOF
 
 if [[ -n $OPT_LOCAL && -n $OPT_PROD ]]; then
