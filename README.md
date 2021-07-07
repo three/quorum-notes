@@ -10,7 +10,9 @@ clean up/document before committing to quorum-site. Comes without warranty.
 *This is not the official Quorum setup docs, these are just notes from someone
 who doesn't follow those docs.*
 
-For this guide you need https://www.macports.org/. If you haven't used macports
+First install XCode by running `xcode-select --install`.
+
+Next you need https://www.macports.org/. If you haven't used macports
 it's simialar to brew but is designed more like Linux package managers and,
 importantly, has better support of older software (ie python2).
 
@@ -50,6 +52,8 @@ todotxt                        @2.12.0         office/todotxt
 xdg-utils                      @1.1.3          sysutils/xdg-utils
 yarn                           @1.22.10        devel/yarn
 zsh                            @5.8            shells/zsh
+neovim
+coreutils
 ```
 
 (Note: `p27-enchant` and `py27-gdal` aren't actually used since we reinstall
@@ -80,7 +84,7 @@ $ virtualenv-3.9 -p /opt/local/bin/python2.7 venv
 $ ./venv/bin/pip install -r tests/requirements.txt
 ```
 
-To connect to the dev db, once you have authentication to bastion setup,
+While that's installing you'll need to get Bastion setup. Once that's done you can connect to the dev db like so,
 
 ```
 $ ssh -p 27 <BASTION_USERNAME>@ec2-52-206-129-115.compute-1.amazonaws.com -L 5433:oh-god-are-we-allowed-to-terminate-the-dev-db.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432
@@ -89,7 +93,14 @@ $ ssh -p 27 <BASTION_USERNAME>@ec2-52-206-129-115.compute-1.amazonaws.com -L 543
 I put that command here for illustrative purposes. You should set your ssh hosts
 up in your `~/.ssh/config` (see the `ssh_config` file).
 
-Now the python side of thigns are set up. To run the server,
+From bastion you'll also need to grab `quorum-crypt.pem`. You can put that in
+`quorum-site` and run `git crypt unlock quorum-crypt.pem`. This decrypts
+`quorum/settings/production_secrets.py`. Git-crypt will keep this file decrypted
+as you switch branches (provided you don't modify it and you don't checkout
+branches encrypted with a different password). We have special instructions you
+need to follow if you ever need to modify this file.
+
+Now the python side of things are set up. To run the server,
 
 ```
 $ ./venv/bin/python manage.py runserver_plus 0.0.0.0:8000
@@ -132,8 +143,8 @@ Once that's done we have three node packages we need to install dependencies
 for:
 
 ```
-$ (cd QuorumDesign && npm install)
-$ (cd QuoumGrassroots && npm install)
+$ (cd QuorumDesign && npm ci)
+$ (cd QuoumGrassroots && npm ci)
 $ npm install
 ```
 
