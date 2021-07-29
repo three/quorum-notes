@@ -25,20 +25,19 @@ _travis() {
 
 TRAVIS_AUTH_TOKEN="$(_travis token --no-interactive)"
 
-# echo "Creating Build Request..."
-# REQUEST_ID=$(
-#     curl -s --fail-with-body \
-#        -H "Content-Type: application/json" \
-#        -H "Accept: application/json" \
-#        -H "Travis-API-Version: 3" \
-#        -H "Authorization: token $TRAVIS_AUTH_TOKEN" \
-#        -d "{\"request\": {\"branch\": \"$1\"}}" \
-#        "$TRAVIS_API_ENDPOINT/repo/$TRAVIS_REPO_ID/requests" | \
-#    jq '.request.id'
-# )
-# echo "Build Request Created (id $REQUEST_ID)"
-# echo
-REQUEST_ID=588074216
+echo "Creating Build Request..."
+REQUEST_ID=$(
+    curl -s --fail-with-body \
+       -H "Content-Type: application/json" \
+       -H "Accept: application/json" \
+       -H "Travis-API-Version: 3" \
+       -H "Authorization: token $TRAVIS_AUTH_TOKEN" \
+       -d "{\"request\": {\"branch\": \"$1\"}}" \
+       "$TRAVIS_API_ENDPOINT/repo/$TRAVIS_REPO_ID/requests" | \
+   jq '.request.id'
+)
+echo "Build Request Created (id $REQUEST_ID)"
+echo
 
 echo "We have successfully created a request to start the Travis build, but haven't gotten"
 echo "a Build ID. We're now going to poll Travis until the build starts. Each additional '.'"
