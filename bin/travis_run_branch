@@ -25,36 +25,37 @@ _travis() {
 
 TRAVIS_AUTH_TOKEN="$(_travis token --no-interactive)"
 
-echo "Creating Build Request..."
-REQUEST_ID=$(
-    curl -s --fail-with-body \
-       -H "Content-Type: application/json" \
-       -H "Accept: application/json" \
-       -H "Travis-API-Version: 3" \
-       -H "Authorization: token $TRAVIS_AUTH_TOKEN" \
-       -d "{\"request\": {\"branch\": \"$1\"}}" \
-       "$TRAVIS_API_ENDPOINT/repo/$TRAVIS_REPO_ID/requests" | \
-   jq '.request.id'
-)
-echo "Build Request Created (id $REQUEST_ID)"
-echo
+# echo "Creating Build Request..."
+# REQUEST_ID=$(
+#     curl -s --fail-with-body \
+#        -H "Content-Type: application/json" \
+#        -H "Accept: application/json" \
+#        -H "Travis-API-Version: 3" \
+#        -H "Authorization: token $TRAVIS_AUTH_TOKEN" \
+#        -d "{\"request\": {\"branch\": \"$1\"}}" \
+#        "$TRAVIS_API_ENDPOINT/repo/$TRAVIS_REPO_ID/requests" | \
+#    jq '.request.id'
+# )
+# echo "Build Request Created (id $REQUEST_ID)"
+# echo
+REQUEST_ID=588074216
 
 echo "We have successfully created a request to start the Travis build, but haven't gotten"
-echo "a Build ID. We're now going to poll Travis until the build starts. Each '.' printed"
-echo "represents single polling request."
+echo "a Build ID. We're now going to poll Travis until the build starts. Each additional '.'"
+echo "printed represents single polling request."
 echo
-echo -n "Waiting for build to start"
+echo -n "Waiting for build id to be assigned..."
 TEMP_FILE=$(mktemp)
 while [[ -z "$(cat $TEMP_FILE)" ]]
 do
     (
-        curl -s -X GET \
+        curl -s \
            -H "Content-Type: application/json" \
            -H "Accept: application/json" \
            -H "Travis-API-Version: 3" \
            -H "Authorization: token $TRAVIS_AUTH_TOKEN" \
-       "$TRAVIS_API_ENDPOINT/repo/$TRAVIS_REPO_ID/requests" \
-       | jq '.requests | map(select(.id == 588074216)) | .[0].builds[0].id' \
+       "$TRAVIS_API_ENDPOINT/repo/$TRAVIS_REPO_ID/request/$REQUEST_ID" \
+       | jq '.builds[0].id' \
        | grep -o '[0-9][0-9]*' \
        || true
     ) >$TEMP_FILE
@@ -62,6 +63,8 @@ do
     sleep 5
 done
 BUILD_ID="$(cat $TEMP_FILE)"
+rm $TEMP_FILE
+
 echo "Build Created (id $BUILD_ID)"
 echo
 echo "Use the URL below to view the build:"
