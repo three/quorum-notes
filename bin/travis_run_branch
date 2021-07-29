@@ -1,0 +1,68 @@
+#!/usr/bin/env zsh
+set -eu -o pipefail
+zparseopts -D -E -help=OPT_HELP
+[[ -n $OPT_HELP ]] && cat <<EOF && exit 0
+Usage: travis_run_branch <branch>
+
+Creates a Travis build on a particular branch and prints the URL for the
+build. This allows you to test Travis build without opening a PR.
+
+Requirements
+    This depends on you being logged into the Travis CLI tool.
+    Instructions for setting this up can be found at
+    https://github.com/travis-ci/travis.rb/blob/master/README.md
+EOF
+
+TRAVIS_API_ENDPOINT="https://api.travis-ci.com"
+TRAVIS_REPO_ID="quorumus%2Fquorum-site"
+
+_travis() {
+    local COMMAND
+    COMMAND=$1
+    shift
+    travis $COMMAND "--api-endpoint=$TRAVIS_API_ENDPOINT/" $@
+}
+
+TRAVIS_AUTH_TOKEN="$(_travis token --no-interactive)"
+
+echo "Creating Build Request..."
+REQUEST_ID=$(
+    curl -s --fail-with-body \
+       -H "Content-Type: application/json" \
+       -H "Accept: application/json" \
+       -H "Travis-API-Version: 3" \
+       -H "Authorization: token $TRAVIS_AUTH_TOKEN" \
+       -d "{\"request\": {\"branch\": \"$1\"}}" \
+       "$TRAVIS_API_ENDPOINT/repo/$TRAVIS_REPO_ID/requests" | \
+   jq '.request.id'
+)
+echo "Build Request Created (id $REQUEST_ID)"
+echo
+
+echo "We have successfully created a request to start the Travis build, but haven't gotten"
+echo "a Build ID. We're now going to poll Travis until the build starts. Each '.' printed"
+echo "represents single polling request."
+echo
+echo -n "Waiting for build to start"
+TEMP_FILE=$(mktemp)
+while [[ -z "$(cat $TEMP_FILE)" ]]
+do
+    (
+        curl -s -X GET \
+           -H "Content-Type: application/json" \
+           -H "Accept: application/json" \
+           -H "Travis-API-Version: 3" \
+           -H "Authorization: token $TRAVIS_AUTH_TOKEN" \
+       "$TRAVIS_API_ENDPOINT/repo/$TRAVIS_REPO_ID/requests" \
+       | jq '.requests | map(select(.id == 588074216)) | .[0].builds[0].id' \
+       | grep -o '[0-9][0-9]*' \
+       || true
+    ) >$TEMP_FILE
+    echo -n .
+    sleep 5
+done
+BUILD_ID="$(cat $TEMP_FILE)"
+echo "Build Created (id $BUILD_ID)"
+echo
+echo "Use the URL below to view the build:"
+echo "https://app.travis-ci.com/github/QuorumUS/quorum-site/builds/$BUILD_ID"

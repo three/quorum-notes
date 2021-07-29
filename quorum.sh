@@ -1,6 +1,6 @@
 which realpath >/dev/null || (
-    echo "No command realpath. You're probably on OSX and don't have coreutils installed."
-    echo "Try: brew install coreutils"
+    echo "No command realpath. You're probably on OSX and don't have coreutils installed." >&2
+    echo "Try: brew install coreutils or port install coreutils" >&2
 )
 
 if [[ ! -d "$QUORUM_ROOT" ]]; then
@@ -12,8 +12,6 @@ if [[ ! -d "$QUORUM_TOOLS_DIR" ]]; then
 fi
 
 export PATH="$QUORUM_TOOLS_DIR/bin:$PATH"
-
-QUORUM_DJANGIO_FILES="QuorumMobile/app/constants/djangio_cache.json _custom_event_djangio_cache.json _djangio_cache.json _new_grassroots_djangio_cache.json _unsubscribed_djangio_cache.json"
 
 hotfix() {
     echo "origin/hotfix/$(latesthotfix)"
@@ -34,14 +32,16 @@ quorum_setup_env() {
 }
 
 # Override bad default behaviour of npx
+# Using qq adds node_modules/.bin to your PATH, which takes care of most npx use cases
 alias npx='npx --no-install'
 
 # Github helpers
+# See https://github.com/three/dotfiles/blob/master/bin/browser for example browser comand
 alias openpr='browser "https://github.com/QuorumUS/quorum-site/compare/hotfix/$(latesthotfix)...$(git branch --show-current)"'
 opencommit() {browser "https://github.com/QuorumUS/quorum-site/commit/$(git rev-parse $1)"}
 
 # Open file in PyCharm
-alias ltedit='/Applications/PyCharm.app/Contents/bin/ltedit.sh'
+alias pycharm='/Applications/PyCharm.app/Contents/bin/ltedit.sh'
 
 # Change directory to quorum-site
 alias q='cd "$QUORUM_ROOT"'
@@ -61,10 +61,10 @@ jestd() {
 alias runfrontend='nvm run ./node_modules/.bin/gulp'
 alias runfrontend_restart='while True; do nvm run --max-old-space-size=8192 ./node_modules/.bin/gulp; done'
 
+# Run backend tests
 alias testpy='LOCAL_PG=1 ./venv/bin/python manage.py test'
-alias sp='./venv/bin/python manage.py shell_plus'
 
-# Docker stuff
+# Docker stuff (outdated)
 alias docker_compose_fullstack='docker-compose -f docker-compose.yml -f docker/local/docker-compose.fullstack.yml'
 #alias qq='docker run -v "$PWD:/code:delegated" -v "$HOME/dev/home:/root" --rm -it qrunner zsh'
 alias qp='docker run -v "$PWD:/code:delegated" -v "$HOME/dev/home:/root" -p 8000:8000 --rm -it qrunner zsh'
@@ -74,13 +74,17 @@ alias build_qrunner='(cd "$QUORUM_TOOLS_DIR/qrunner" && docker build -t qrunner 
 alias checkouthotfix='git --work-tree="$QUORUM_ROOT" checkout "$(hotfix)" -- .'
 
 # SSH into bastion with port forwarding to both dev and prod
-alias bsc='ssh -L 5433:oh-god-are-we-allowed-to-terminate-the-dev-db.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432 -L 5434:quorum-production.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432 -Nnf bastion'
+alias bsc='ssh -Nnf qdb'
 
 # Ripgrep, but only things we care about
-alias qg="rg -g '*.js' -g '*.jsx' -g '*.py'"
+alias qg="rg --max-columns 200 -g '*.js' -g '*.jsx' -g '*.py'"
 
+# elasticsearch stuff
 alias runes='sudo -u elasticsearch elasticsearch'
 alias clear_elasticsearch='curl -XDELETE --user quorum_test:yULYQFAc7+EPbjdwFZoxUBf8PT8= localhost:9200/_all'
 
+# Reload this config file
 alias reload_quorum='source "$QUORUM_TOOLS_DIR/quorum.sh"'
+
+# Open a wip branch based on hotfix
 mkwip() { git switch -c "wip/$1" "$(hotfix)" }
