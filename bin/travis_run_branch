@@ -54,11 +54,13 @@ do
            -H "Travis-API-Version: 3" \
            -H "Authorization: token $TRAVIS_AUTH_TOKEN" \
        "$TRAVIS_API_ENDPOINT/repo/$TRAVIS_REPO_ID/request/$REQUEST_ID" \
+       | tee /tmp/abc123.txt \
        | jq '.builds[0].id' \
        | grep -o '[0-9][0-9]*' \
        || true
     ) >$TEMP_FILE
     echo -n .
+    cat $TEMP_FILE
     sleep 5
 done
 BUILD_ID="$(cat $TEMP_FILE)"

@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+set -eu -o pipefail
+
+source "/opt/local/share/nvm/nvm.sh"
+export NODE_VERSION="$(cat "$QUORUM_ROOT/.nvmrc")"
+nvm use $NODE_VERSION || (echo installing && nvm install $NODE_VERSION && nvm use $NODE_VERSION)

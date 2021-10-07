@@ -20,7 +20,7 @@ Host quorum-selenium
 Host quorum-gr
 	HostName ec2-35-153-206-88.compute-1.amazonaws.com
 Host quorum-gr2
-	HostName ec2-34-229-47-69.compute-1.amazonaws.com
+    HostName ec2-3-84-69-80.compute-1.amazonaws.com
 Host quorum-instagram
     HostName ec2-52-206-93-76.compute-1.amazonaws.com
 Host quorum-fbleads
@@ -38,7 +38,7 @@ Host db-quorum-dev
     HostName ec2-52-206-129-115.compute-1.amazonaws.com
     User eric
     Port 27
-    LocalForward 5433 oh-god-are-we-allowed-to-terminate-the-dev-db.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432
+    LocalForward 5433 oh-god-are-we-allowed-to-terminate-the-dev-db.cq0q6gte857c.us-east-1.rds.amazonaws.com:5432
     ExitOnForwardFailure yes
 
 Host db-quorum-prod
