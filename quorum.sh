@@ -9,13 +9,13 @@ fi
 export PATH="$QUORUM_TOOLS_DIR/bin:$PATH"
 
 add_to_path() {
-    if [[ "$PATH" =~ (^|:)"$1"(:|$) ]]; then
+    if [[ ! "$PATH" =~ (^|:)"$1"(:|$) ]]; then
         PATH="$PATH:$1"
     fi
 }
 
 alias q='pushd "$QUORUM_ROOT"'
-quorum_setup_env() {
+qq() {
     alias sp=shellplus
     source "$QUORUM_ROOT/venv/bin/activate"
     add_to_path "$QUORUM_ROOT/node_modules/.bin"
