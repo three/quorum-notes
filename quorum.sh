@@ -21,6 +21,21 @@ qq() {
     add_to_path "$QUORUM_ROOT/node_modules/.bin"
 }
 
+setup_venv() {(
+    set -exu
+    virtualenv -p python2 venv
+    ./venv/bin/pip -r tests/requirements.txt
+)}
+
+clear_node_cache() {
+    if [[ -d node_modules ]]; then
+        rm -rf node_modules/.cache
+    else
+        echo Unable to find node_modules >&2
+        return 1
+    fi
+}
+
 # Github helpers
 # See https://github.com/three/dotfiles/blob/master/bin/browser for example browser comand
 alias openpr='browser "https://github.com/QuorumUS/quorum-site/compare/hotfix/$(latesthotfix)...$(git branch --show-current)"'
@@ -65,6 +80,7 @@ mkwip() { git switch -c "wip/$1" "$(hotfix)" }
 alias diffhotfix='git diff --merge-base "origin/hotfix/$(latesthotfix)"'
 alias checkout_hotfix='git switch --detach "origin/hotfix/$(latesthotfix)"'
 alias merge_hotfix='git merge "origin/hotfix/$(latesthotfix)"'
+alias update_hotfix='git branch --no-track -f latesthotfix "origin/hotfix/$(latesthotfix)"'
 
 # Teleport standard aliases
 alias tsh_login='tsh login --proxy=tele.quorum.us:443 --auth=local --user=eric.roberts'

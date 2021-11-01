@@ -45,5 +45,5 @@ Host db-quorum-prod
     HostName ec2-52-206-129-115.compute-1.amazonaws.com
     User eric
     Port 27
-    LocalForward 5433 oh-god-are-we-allowed-to-terminate-the-dev-db.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432
+    LocalForward 5434 quorum-production.ck4wgl7u5wcg.us-east-1.rds.amazonaws.com:5432
     ExitOnForwardFailure yes

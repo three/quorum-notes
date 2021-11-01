@@ -55,4 +55,4 @@ fi
 # echo $$ >"$PID_FILE"
 
 set -x
-exec ./venv/bin/python manage.py runserver_plus --nothreading $ARGS $@
+exec python manage.py runserver_plus --nothreading $ARGS $@
