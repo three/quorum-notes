@@ -36,6 +36,12 @@ clear_node_cache() {
     fi
 }
 
+gwip() {
+    git add -A
+    git rm $(git ls-files --deleted) 2>/dev/null
+    git commit --no-verify --no-gpg-sign -m "[WIP][skip ci] $1"
+}
+
 # Github helpers
 # See https://github.com/three/dotfiles/blob/master/bin/browser for example browser comand
 alias openpr='browser "https://github.com/QuorumUS/quorum-site/compare/hotfix/$(latesthotfix)...$(git branch --show-current)"'

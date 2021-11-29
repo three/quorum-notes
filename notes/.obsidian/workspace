@@ -1,0 +1,94 @@
+{
+  "main": {
+    "id": "cf9cf79bb155757e",
+    "type": "split",
+    "children": [
+      {
+        "id": "f321ba51ee748e07",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Weeks/Week of 2021-11-29.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d0d0e5118130b5e5",
+    "type": "split",
+    "children": [
+      {
+        "id": "c0cae6442230f2d4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a44f7cc7ee95a8ff",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "d77b2bb18cc95b0f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "889ad6be20dde82f",
+    "type": "split",
+    "children": [
+      {
+        "id": "24bdb6405b585ee5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bbed98abfbbdaecb",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Weeks/Week of 2021-11-29.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "f321ba51ee748e07",
+  "lastOpenFiles": [
+    "Weeks/Week of 2021-11-29.md",
+    "Documentation/Grassroots-Lead Ads Integration.md"
+  ]
+}
