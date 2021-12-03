@@ -42,6 +42,13 @@ gwip() {
     git commit --no-verify --no-gpg-sign -m "[WIP][skip ci] $1"
 }
 
+q_date_commit() {(
+    set -eu
+    cd "$QUORUM_TOOLS_DIR"
+    git add -A
+    git commit -m "Quick Commit $(date +"%Y-%M-%d")"
+)}
+
 # Github helpers
 # See https://github.com/three/dotfiles/blob/master/bin/browser for example browser comand
 alias openpr='browser "https://github.com/QuorumUS/quorum-site/compare/hotfix/$(latesthotfix)...$(git branch --show-current)"'
