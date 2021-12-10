@@ -10,7 +10,7 @@
           "type": "markdown",
           "state": {
             "file": "Weeks/Week of 2021-12-06.md",
-            "mode": "source"
+            "mode": "preview"
           }
         }
       }
@@ -52,7 +52,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 351.99999809265137
+    "width": 350.99999809265137
   },
   "right": {
     "id": "889ad6be20dde82f",
@@ -90,9 +90,9 @@
   "lastOpenFiles": [
     "Weeks/Week of 2021-12-06.md",
     "Tickets/QPAC-440 Bank Balance not set upon creation of the bank account..md",
-    "Personal Meeting Notes/2021-12-06 Dev Book Club.md",
+    "Tickets/QPAC-9 Cash Contribution limit errors.md",
     "Shared Documentation/Grassroots-Lead Ads Integration.md",
-    "Weeks/Week of 2021-11-29.md",
-    "Tickets/QPAC-9 Cash Contribution limit errors.md"
+    "Personal Meeting Notes/2021-12-06 Dev Book Club.md",
+    "Weeks/Week of 2021-11-29.md"
   ]
 }
