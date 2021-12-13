@@ -42,11 +42,12 @@ gwip() {
     git commit --no-verify --no-gpg-sign -m "[WIP][skip ci] $1"
 }
 
-q_date_commit() {(
+commit_daily_notes() {(
     set -eu
     cd "$QUORUM_TOOLS_DIR"
-    git add -A
-    git commit -m "Quick Commit $(date +"%Y-%M-%d")"
+    git add -A notes
+    git commit -m "Daily Notes"
+    git push
 )}
 
 # Github helpers
