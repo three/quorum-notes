@@ -10,7 +10,7 @@
           "type": "markdown",
           "state": {
             "file": "Weeks/Week of 2021-12-13.md",
-            "mode": "preview"
+            "mode": "source"
           }
         }
       }
@@ -89,14 +89,14 @@
   "active": "e900e82c07a3b902",
   "lastOpenFiles": [
     "Weeks/Week of 2021-12-13.md",
+    "Weeks/Week of 2021-09-06.md",
+    "Personal Meeting Notes/2021-12-15 Eric <> Mares.md",
     "Personal Meeting Notes/2021-12-13 Eric <> Chris M.md",
+    "Personal Meeting Notes/2021-12-06 Dev Book Club.md",
+    "Tickets/QPAC-9 Cash Contribution limit errors.md",
+    "Tickets/QPAC-440 Bank Balance not set upon creation of the bank account..md",
     "Weeks/Week of 2021-12-06.md",
-    "Weeks/Week of 2021-11-29.md",
-    "Personal Documentation/Ngrok-like Public Port Forward.md",
-    "Personal Documentation/Testing Servers Quick Reference.md",
-    "Personal Documentation/Application Server Debugging.md",
-    "Personal Documentation/Debugging Grassroots Domains.md",
-    "Personal Documentation/Remove Error Boundry.md",
-    "Shared Documentation/Grassroots-Lead Ads Integration.md"
+    "Weeks/Week of 2021-11-08.md",
+    "Weeks/Week of 2021-10-25.md"
   ]
 }
