@@ -10,13 +10,14 @@ export PATH="$QUORUM_TOOLS_DIR/bin:$PATH"
 
 add_to_path() {
     if [[ ! "$PATH" =~ (^|:)"$1"(:|$) ]]; then
-        PATH="$PATH:$1"
+        PATH="$1:$PATH"
     fi
 }
 
 alias q='pushd "$QUORUM_ROOT"'
 qq() {
     alias sp=shellplus
+    alias mypy='"$QUORUM_ROOT/venv3/bin/python" -m mypy'
     source "$QUORUM_ROOT/venv/bin/activate"
     add_to_path "$QUORUM_ROOT/node_modules/.bin"
 }
