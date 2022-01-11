@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Weeks/Week of 2022-01-03.md",
+            "file": "Weeks/Week of 2022-01-10.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Weeks/Week of 2022-01-03.md",
+                "file": "Weeks/Week of 2022-01-10.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,15 +89,15 @@
   },
   "active": "afb0600ff330357e",
   "lastOpenFiles": [
+    "Weeks/Week of 2022-01-10.md",
     "Weeks/Week of 2022-01-03.md",
-    "Weeks/Week of 2021-12-27.md",
-    "Weeks/Week of 2021-12-13.md",
-    "Weeks/Week of 2021-12-20.md",
+    "Weeks/Week of 2021-11-01.md",
+    "Templates/Weekly Notes.md",
     "Weeks/Week of 2021-09-06.md",
-    "Weeks/Week of 2021-09-20.md",
-    "Weeks/Week of 2021-09-13.md",
-    "Tickets/QPAC-440 Bank Balance not set upon creation of the bank account..md",
-    "Tickets/QPAC-452 Enable Docker in Travis.md",
-    "Templates/Weekly Notes.md"
+    "Weeks/Week of 2021-10-04.md",
+    "Weeks/Week of 2021-10-25.md",
+    "Weeks/Week of 2021-11-08.md",
+    "Weeks/Week of 2021-11-15.md",
+    "Weeks/Week of 2021-11-22.md"
   ]
 }
