@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "afb0600ff330357e",
+        "id": "11f7c0c696d74002",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -87,17 +87,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "afb0600ff330357e",
+  "active": "11f7c0c696d74002",
   "lastOpenFiles": [
     "Weeks/Week of 2022-01-10.md",
-    "Weeks/Week of 2022-01-03.md",
-    "Weeks/Week of 2021-11-01.md",
-    "Templates/Weekly Notes.md",
+    "[.md",
+    "Personal Documentation/Remove Error Boundry.md",
+    "Personal Documentation/Application Server Debugging.md",
+    "Tickets/QPAC-9 Cash Contribution limit errors.md",
+    "Tickets/QPAC-440 Bank Balance not set upon creation of the bank account..md",
+    "Tickets/QPAC-452 Enable Docker in Travis.md",
     "Weeks/Week of 2021-09-06.md",
-    "Weeks/Week of 2021-10-04.md",
-    "Weeks/Week of 2021-10-25.md",
-    "Weeks/Week of 2021-11-08.md",
-    "Weeks/Week of 2021-11-15.md",
-    "Weeks/Week of 2021-11-22.md"
+    "Weeks/Week of 2021-09-13.md",
+    "Weeks/Week of 2022-01-03.md"
   ]
 }
