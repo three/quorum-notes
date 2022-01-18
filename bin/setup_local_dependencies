@@ -1,0 +1,93 @@
+#!/usr/bin/env zsh
+set -eu -o pipefail
+zparseopts -D -E -F -help=OPT_HELP -clean=OPT_CLEAN -clear-user-caches=OPT_CLEAR_USER_CACHES
+
+[[ -n "$OPT_HELP" ]] && cat <<EOF && exit 1 || true
+Usage:
+    setup_local_dependencies [--help] [--clean] [--clear-user-caches]
+
+Description:
+    Sets up fullstack dependencies that lives within the repository
+
+Options:
+    --help
+        Print this message and exit
+    --clean
+        Delete directories before re-installing
+    --clear-user-caches
+        Before anything, delete user-level caches that might be used during
+        install. Might break something if not used with --clean.
+EOF
+
+echo "Running some checks..."
+if [[ "$(git rev-list --max-parents=0 HEAD)" != "6cd400da32ad1deb4fde027762a4fb3a905d0bda" ]]; then
+    echo "$0: Not in a quorum-site repository?" >/dev/stderr
+    exit 1
+fi
+if [[ "$(git rev-parse --show-toplevel)" != "$PWD" ]]; then
+    # Could also have to do with symlink weirdness
+    echo "$0: Not in toplevel of quorum-site directory?" >/dev/stderr
+    exit 1
+fi
+if [[ ! -d "$NVM_DIR" ]]; then
+    echo "$0: Node Version Manager not installed, please set NVM_DIR" >/dev/stderr
+    exit 1
+fi
+echo "Checks passed"
+echo
+
+if [[ -n "$OPT_CLEAR_USER_CACHES" ]]; then
+    echo "Clearing user caches..."
+    rm -rf "$HOME/.npm" "$NVM_DIR/.cache" "$HOME/.cache"
+    echo
+fi
+
+LOCAL_DEPENDENCY_FOLDERS=(
+    venv
+    venv3
+    node_modules
+    shared/node_modules
+    QuorumDesign/node_modules
+)
+if [[ -n "$OPT_CLEAN" ]]; then
+    echo "Cleaning dependency folders..."
+    file $LOCAL_DEPENDENCY_FOLDERS
+    rm -rf $LOCAL_DEPENDENCY_FOLDERS
+    echo
+fi
+
+echo "Setting up python2 dependencies..."
+if [[ ! -d venv ]]; then
+    virtualenv -p python2 venv
+fi
+./venv/bin/pip install -r tests/requirements.txt
+echo
+
+echo "Setting up python3 dependencies..."
+if [[ ! -d venv3 ]]; then
+    virtualenv -p python3 venv3
+fi
+./venv3/bin/pip install -r tests/requirements3.txt
+echo
+
+echo "Setting up NodeJS, via NVM..."
+bash -c 'source $NVM_DIR/nvm.sh && nvm ls-remote >/dev/null && nvm install'
+echo
+
+echo "Setting up toplevel Javascript dependencies..."
+"$NVM_DIR/nvm-exec" npm install
+echo
+
+echo "Setting up shared Javascript dependencies..."
+pushd shared
+"$NVM_DIR/nvm-exec" npm install
+popd
+echo
+
+echo "Setting up QuorumDesign Javascript dependencies..."
+pushd QuorumDesign
+"$NVM_DIR/nvm-exec" npm install
+popd
+echo
+
+echo "Done."
