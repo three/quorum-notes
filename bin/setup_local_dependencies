@@ -19,6 +19,12 @@ Options:
         install. Might break something if not used with --clean.
 EOF
 
+echo "PATH Setup..."
+echo "This script will add /opt/local/bin to the beginning of PATH before running"
+PATH="/opt/local/bin:$PATH"
+echo "Running with PATH: $PATH"
+echo
+
 echo "Running some checks..."
 if [[ "$(git rev-list --max-parents=0 HEAD)" != "6cd400da32ad1deb4fde027762a4fb3a905d0bda" ]]; then
     echo "$0: Not in a quorum-site repository?" >/dev/stderr
@@ -33,6 +39,11 @@ if [[ ! -d "$NVM_DIR" ]]; then
     echo "$0: Node Version Manager not installed, please set NVM_DIR" >/dev/stderr
     exit 1
 fi
+python2.7 -c 'import osgeo' >/dev/null 2>&1 || {
+    echo "$0: Python executable we want to use doesn't have osgeo library" >/dev/stderr
+    echo "(try installing py27-gal from macports)" >/dev/stderr
+    exit 1
+}
 echo "Checks passed"
 echo
 
@@ -58,14 +69,14 @@ fi
 
 echo "Setting up python2 dependencies..."
 if [[ ! -d venv ]]; then
-    virtualenv -p python2 venv
+    virtualenv -p python2.7 venv
 fi
 ./venv/bin/pip install -r tests/requirements.txt
 echo
 
 echo "Setting up python3 dependencies..."
 if [[ ! -d venv3 ]]; then
-    virtualenv -p python3 venv3
+    virtualenv -p python3.10 venv3
 fi
 ./venv3/bin/pip install -r tests/requirements3.txt
 echo
