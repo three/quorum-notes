@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "11f7c0c696d74002",
+        "id": "37b899c1ee10525d",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -87,9 +87,10 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "11f7c0c696d74002",
+  "active": "37b899c1ee10525d",
   "lastOpenFiles": [
     "Weeks/Week of 2022-01-24.md",
+    "[.md",
     "Weeks/Week of 2022-01-18.md",
     "Templates/Weekly Notes.md",
     "Personal Meeting Notes/2021-12-13 Eric <> Chris M.md",
@@ -97,7 +98,6 @@
     "Shared Documentation/Grassroots-Lead Ads Integration.md",
     "Tickets/QPAC-440 Bank Balance not set upon creation of the bank account..md",
     "Tickets/Integrating Typescript in Frontend Codebase.md",
-    "Personal Meeting Notes/2022-01-20 Eric <> Mares.md",
-    "Personal Meeting Notes/2021-12-15 Eric <> Mares.md"
+    "Personal Meeting Notes/2022-01-20 Eric <> Mares.md"
   ]
 }
