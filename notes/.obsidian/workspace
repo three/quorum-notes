@@ -53,7 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 266.0121879577637
+    "width": 433.0121879577637
   },
   "right": {
     "id": "889ad6be20dde82f",
@@ -90,14 +90,14 @@
   "active": "37b899c1ee10525d",
   "lastOpenFiles": [
     "Weeks/Week of 2022-01-24.md",
-    "[.md",
-    "Weeks/Week of 2022-01-18.md",
+    "Weeks/Week of 2022-01-31.md",
+    "Personal Documentation/Testing Servers Quick Reference.md",
+    "Personal Documentation/Application Server Debugging.md",
+    "Personal Documentation/Debugging Grassroots Domains.md",
+    "Personal Documentation/Common Problems.md",
     "Templates/Weekly Notes.md",
-    "Personal Meeting Notes/2021-12-13 Eric <> Chris M.md",
-    "Personal Meeting Notes/2021-12-06 Dev Book Club.md",
-    "Shared Documentation/Grassroots-Lead Ads Integration.md",
-    "Tickets/QPAC-440 Bank Balance not set upon creation of the bank account..md",
-    "Tickets/Integrating Typescript in Frontend Codebase.md",
-    "Personal Meeting Notes/2022-01-20 Eric <> Mares.md"
+    "Weeks/Week of 2022-01-03.md",
+    "[.md",
+    "Weeks/Week of 2022-01-18.md"
   ]
 }
