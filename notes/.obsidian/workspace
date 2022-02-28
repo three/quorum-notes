@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Weeks/Week of 2022-02-21.md",
+            "file": "Weeks/Week of 2022-02-28.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Weeks/Week of 2022-02-21.md",
+                "file": "Weeks/Week of 2022-02-28.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,15 +89,15 @@
   },
   "active": "37b899c1ee10525d",
   "lastOpenFiles": [
-    "Weeks/Week of 2022-02-21.md",
+    "Weeks/Week of 2022-02-28.md",
     "Weeks/Week of 2022-02-14.md",
     "Weeks/Week of 2022-02-07.md",
+    "Weeks/Week of 2022-01-31.md",
+    "Weeks/Week of 2022-02-21.md",
     "Templates/Weekly Notes.md",
     "Weeks/Week of 2022-01-18.md",
     "Week of 2022-02-14.pdf",
-    "Weeks/Week of 2022-01-31.md",
     "Personal Meeting Notes/2021-12-06 Dev Book Club.md",
-    "Personal Documentation/Debugging Grassroots Domains.md",
-    "Personal Documentation/Ngrok-like Public Port Forward.md"
+    "Personal Documentation/Debugging Grassroots Domains.md"
   ]
 }
