@@ -1,7 +1,10 @@
 # QPAC-548 Bulk Upload Emails
 
 ## Todo
- - [ ] Test the existing functionality
+ - [ ] Initiate an example of the email, as it currently sends now
+ - [ ] Figure out how to modify email contents
+ - [ ] Figure out how to add an attachment to a `ConfirmationEmail`
+ - [ ] Figure out how to embellish the CSV
 
 ## Scripts
 
@@ -29,3 +32,68 @@ What's happening now is on "successful" completion of the BulkUpload, we call `C
 
 relevant ff: `ff_bulk_upload_conf_email`
 Email created in `ConfirmationEmail.create_bulk_upload_confirmation_email`
+
+ - Sending the confirmation emails is ultimately done in `ConfirmationEmailSender.send_confirmation_emails`, which batches them into `_prepare_and_send_batch_confirmation_emails`. The bulk upload emails shouldn't be btached and should be handled separately.
+ - We already generate the attachments list, albeit empty, in `ConfirmationEmailSend._get_transmission_dict`. The object will look like, `{'name': 'Hello World', 'type': 'text/html; charset="UTF-8"', 'data': base64.b64encode(attachment_date)}`
+ - Probably need an array of attachments on the `ConfirmationEmail` object. The data will come from S3.
+   
+
+## Test Case
+On dev db: `Bulk Upload Id: 60135`
+
+To run parse,
+
+```python
+bu = BulkUploadFile.objects.unsafe_get(id=60135)
+management.call_command(
+    "parse",
+    "individual_contributions",
+    bulk_upload_file=bu
+)
+```
+
+To reset,
+
+```python
+from app.custom_data.crons import *
+
+bu = BulkUploadFile.objects.unsafe_get(id=60135)
+bu.status = BulkUploadStatus.queued
+bu.save()
+```
+
+To send confirmation emails,
+
+```python
+# Need to remove selenium imports from vote_campaign.py
+from app.emails.crons import *
+ConfirmationEmailCronJob.run_do()
+```
+
+
+## Migrations
+
+```sql
+BEGIN;
+
+CREATE TABLE emails_confirmationemailattachment (
+    "id" serial NOT NULL PRIMARY KEY,
+    "confirmation_email_id" INTEGER NOT NULL,
+    "name" TEXT NOT NULL,
+    "mime_type" TEXT NOT NULL,
+    "s3_bucket" TEXT NOT NULL,
+    "s3_path" TEXT NOT NULL
+)
+
+ALTER TABLE emails_confirmationemailattachment OWNER TO quorum_user;
+GRANT INSERT, UPDATE, DELETE, SELECT
+    ON TABLE emails_confirmationemailattachment
+    TO production;
+
+ALTER TABLE emails_confirmationemailattachment
+    ADD CONSTRAINT emails_confirmationemailattachment__confirmation_email__fk
+    FOREIGN KEY ("confirmation_email_id")
+    REFERENCES "emails_confirmationemail" (id);
+
+COMMIT;
+```
