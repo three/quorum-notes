@@ -1,9 +1,9 @@
 # QPAC-548 Bulk Upload Emails
 
 ## Todo
- - [ ] Initiate an example of the email, as it currently sends now
- - [ ] Figure out how to modify email contents
- - [ ] Figure out how to add an attachment to a `ConfirmationEmail`
+ - [x] Initiate an example of the email, as it currently sends now
+ - [x] Figure out how to modify email contents
+ - [x] Figure out how to add an attachment to a `ConfirmationEmail`
  - [ ] Figure out how to embellish the CSV
 
 ## Scripts
@@ -70,30 +70,37 @@ from app.emails.crons import *
 ConfirmationEmailCronJob.run_do()
 ```
 
+or
+```python
+ConfirmationEmailSender().send_confirmation_emails(unprocessed_bulk_upload_emails=ConfirmationEmail.objects.unsafe_all())
+```
 
 ## Migrations
 
 ```sql
+-- [x] Ran on dev db
 BEGIN;
 
-CREATE TABLE emails_confirmationemailattachment (
+CREATE TABLE userdata_confirmationemailattachment (
     "id" serial NOT NULL PRIMARY KEY,
+    "created" timestamptz NOT NULL DEFAULT now(),
+    "updated" timestamptz NOT NULL DEFAULT now(),
     "confirmation_email_id" INTEGER NOT NULL,
     "name" TEXT NOT NULL,
     "mime_type" TEXT NOT NULL,
     "s3_bucket" TEXT NOT NULL,
     "s3_path" TEXT NOT NULL
-)
+);
 
-ALTER TABLE emails_confirmationemailattachment OWNER TO quorum_user;
+ALTER TABLE userdata_confirmationemailattachment OWNER TO quorum_user;
 GRANT INSERT, UPDATE, DELETE, SELECT
-    ON TABLE emails_confirmationemailattachment
+    ON TABLE userdata_confirmationemailattachment
     TO production;
 
-ALTER TABLE emails_confirmationemailattachment
-    ADD CONSTRAINT emails_confirmationemailattachment__confirmation_email__fk
+ALTER TABLE userdata_confirmationemailattachment
+    ADD CONSTRAINT userdata_confirmationemailattachment__confirmation_email__fk
     FOREIGN KEY ("confirmation_email_id")
-    REFERENCES "emails_confirmationemail" (id);
+    REFERENCES "userdata_confirmationemail" (id);
 
 COMMIT;
 ```
