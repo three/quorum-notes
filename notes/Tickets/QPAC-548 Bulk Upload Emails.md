@@ -72,13 +72,16 @@ ConfirmationEmailCronJob.run_do()
 
 or
 ```python
-ConfirmationEmailSender().send_confirmation_emails(unprocessed_bulk_upload_emails=ConfirmationEmail.objects.unsafe_all())
+from app.emails.crons import *
+emails = ConfirmationEmail.objects.unsafe_filter(id=1787172)
+ConfirmationEmailSender().send_confirmation_emails(
+    unprocessed_bulk_upload_emails=emails
+)
 ```
 
 ## Migrations
 
 ```sql
--- [x] Ran on dev db
 BEGIN;
 
 CREATE TABLE userdata_confirmationemailattachment (
