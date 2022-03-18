@@ -44,7 +44,7 @@ On dev db: `Bulk Upload Id: 60135`
 To run parse,
 
 ```python
-bu = BulkUploadFile.objects.unsafe_get(id=60137)
+bu = BulkUploadFile.objects.unsafe_get(id=60145)
 bu.status = BulkUploadStatus.queued
 bu.save(update_fields=['status'])
 management.call_command(
@@ -75,7 +75,7 @@ ConfirmationEmailCronJob.run_do()
 or
 ```python
 from app.emails.crons import *
-emails = ConfirmationEmail.objects.unsafe_filter(id=1787173)
+emails = ConfirmationEmail.objects.unsafe_filter(id=bu.confirmationemail.id)
 ConfirmationEmailSender().send_confirmation_emails(
     unprocessed_bulk_upload_emails=emails
 )
