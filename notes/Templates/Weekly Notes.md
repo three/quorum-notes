@@ -1,39 +1,38 @@
-# Week of Something
+# Fill In: Title of Week
+Description of Week
 
-## Monday
- - [ ] Start of Week Tasks
-	 - [ ] Weekly Notes
-	 - [ ] Upgrade Brew/Macports
-	 - [ ] Look over email and open PRs
-	 - [ ] Lattice Update
+## Fill In: Carry Over Task*
+link here
+
+## Beginning
+ - [ ] Morning Focus (8:00-11:30)
+	 - [ ] Setup weekly notes from calendar
+	 - [ ] Upgrade Brew, Macports and Pycharm
+	 - [ ] Look over email, slack, open PRs
 	 - [ ] Carry-over from last week
- - [ ] PAC Standup (11:45am)
+ - [ ] PAC Standup (11:45-12:15)
  - [ ] Lunch
- - [ ] Afternoon Focus
+ - [ ] Afternoon Work
+ - [ ] Wrap Up Day (17:00-17:30)
+	 - [ ] Fill in tomorrow's morning focus
 
-## Tuesday
- - [ ] Morning Focus
- - [ ] PAC Standup (11:45am)
+## Middle
+ - [ ] Morning Focus (8:00-11:30)
+ - [ ] PAC Standup (11:45-12:15)
  - [ ] Lunch
- - [ ] Afternoon Focus
+ - [ ] Afternoon Work
+ - [ ] Wrap Up Day (17:00-17:30)
+	 - [ ] Fill in tomorrow's morning focus
 
 
-## Wednesday
- - [ ] Morning Focus
- - [ ] PAC Standup (11:45am)
+## End of Week
+ - [ ] Morning Focus (8:00-11:30)
+ - [ ] PAC Standup (11:45-12:15)
  - [ ] Lunch
- - [ ] Afternoon Focus
-
-
-## Thursday
- - [ ] Morning Focus
- - [ ] PAC Standup (11:45am)
- - [ ] Lunch
- - [ ] Afternoon Focus
-
-
-## Friday
- - [ ] Morning Focus
- - [ ] PAC Standup (11:45am)
- - [ ] Lunch
- - [ ] Afternoon Focus
+ - [ ] Afternoon Work
+	 - [ ] Finish up dangling tasks
+ - [ ] Wrap Up Week (16:00-16:30)
+	 - [ ] Lattice Update
+	 - [ ] List accomplishments
+	 - [ ] List action items
+	 - [ ] Finalize weekly notes
