@@ -9,13 +9,9 @@
 ## Scripts
 
 ```python
-BulkUploadFile.objects.unsafe_filter(id=55886).update(status=2)
-for bu in BulkUploadFile.objects.unsafe_filter(upload_type=12, status=2):
-  management.call_command(
-    "parse",
-    "individual_contributions",
-    bulk_upload_file=bu,
-  )
+from app.custom_data.crons import *
+from app.emails.crons import *
+ParseBulkUploadsTier1Cron.run_do(); ConfirmationEmailCronJob.run_do()
 ```
 
 ## Notes
