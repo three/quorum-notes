@@ -6,10 +6,12 @@ link here
 
 ## Beginning
  - [ ] Morning Focus (8:00-11:30)
-	 - [ ] Setup weekly notes from calendar
-	 - [ ] Upgrade Brew, Macports and Pycharm
-	 - [ ] Look over email, slack, open PRs
-	 - [ ] Carry-over from last week
+	 - [ ] Monday morning tasks
+		 - [ ] Copy over meetings from Calendar
+		 - [ ] Upgrade Brew, Macports and Pycharm
+		 - [ ] Look over email, slack, open PRs, etc
+		 - [ ] Carry-over action items from last week
+		 - [ ] Look over next week's calendar
  - [ ] PAC Standup (11:45-12:15)
  - [ ] Lunch
  - [ ] Afternoon Work
