@@ -14,7 +14,7 @@ link here
 		 - [ ] Look over next week's calendar
  - [ ] PAC Standup (11:45-12:15)
  - [ ] Lunch
- - [ ] Afternoon Work
+ - [ ] Afternoon Code Review
  - [ ] Wrap Up Day (17:00-17:30)
 	 - [ ] Fill in tomorrow's morning focus
 
@@ -22,7 +22,7 @@ link here
  - [ ] Morning Focus (8:00-11:30)
  - [ ] PAC Standup (11:45-12:15)
  - [ ] Lunch
- - [ ] Afternoon Work
+ - [ ] Afternoon Code Review
  - [ ] Wrap Up Day (17:00-17:30)
 	 - [ ] Fill in tomorrow's morning focus
 
@@ -31,8 +31,7 @@ link here
  - [ ] Morning Focus (8:00-11:30)
  - [ ] PAC Standup (11:45-12:15)
  - [ ] Lunch
- - [ ] Afternoon Work
-	 - [ ] Finish up dangling tasks
+ - [ ] Afternoon Code Review
  - [ ] Wrap Up Week (16:00-16:30)
 	 - [ ] Lattice Update
 	 - [ ] List accomplishments
