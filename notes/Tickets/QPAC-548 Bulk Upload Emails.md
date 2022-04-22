@@ -40,7 +40,7 @@ On dev db: `Bulk Upload Id: 60135`
 To run parse,
 
 ```python
-bu = BulkUploadFile.objects.unsafe_get(id=60145)
+bu = BulkUploadFile.objects.unsafe_get(id=60160)
 bu.status = BulkUploadStatus.queued
 bu.save(update_fields=['status'])
 management.call_command(
