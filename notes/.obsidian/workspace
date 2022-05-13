@@ -9,6 +9,18 @@
         "state": {
           "type": "markdown",
           "state": {
+            "file": "Templates/Weekly Notes.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      },
+      {
+        "id": "3d564e0a964b0c53",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
             "file": "Weeks/Week of 2022-05-08.md",
             "mode": "source",
             "source": false
@@ -49,13 +61,11 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 312,
-    "collapsed": true
+    "width": 312
   },
   "right": {
     "id": "889ad6be20dde82f",
@@ -89,17 +99,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "7b3646a3140d84d4",
+  "active": "3d564e0a964b0c53",
   "lastOpenFiles": [
     "Weeks/Week of 2022-05-08.md",
-    "Weeks/Week of 2022-05-02.md",
     "Templates/Weekly Notes.md",
+    "Current Projects/Receipts Form.md",
+    "Weeks/Week of 2022-05-02.md",
     "Weeks/Week of 2022-04-25.md",
     "Weeks/Week of 2021-09-06.md",
     "Personal Documentation/Remove Error Boundry.md",
     "Personal Documentation/Testing Servers Quick Reference.md",
     "Personal Documentation/Ngrok-like Public Port Forward.md",
-    "Personal Documentation/Application Server Debugging.md",
-    "Personal Documentation/Common Problems.md"
+    "Personal Documentation/Application Server Debugging.md"
   ]
 }

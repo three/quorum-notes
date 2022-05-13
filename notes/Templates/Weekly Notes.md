@@ -21,7 +21,7 @@ Description of Week
 	 - [ ] Fill in deep work
  - [ ] **Deep Work** (2 hours)
  - [ ] Shallow Work
- - [ ] Wrap Up Day (17:00-17:30)
+ - [ ] Wrap Up Day (5:00-5:30)
 	 - [ ] Fill in tomorrow's morning focus
 
 ## Tuesday
@@ -37,7 +37,7 @@ Description of Week
 	 - [ ] Fill in deep work
  - [ ] **Deep Work** (2 hours)
  - [ ] Shallow Work
- - [ ] Wrap Up Day (17:00-17:30)
+ - [ ] Wrap Up Day (5:00-5:30)
 	 - [ ] Fill in tomorrow's morning focus
 
 ## Wednesday
@@ -53,7 +53,7 @@ Description of Week
 	 - [ ] Fill in deep work
  - [ ] **Deep Work** (2 hours)
  - [ ] Shallow Work
- - [ ] Wrap Up Day (17:00-17:30)
+ - [ ] Wrap Up Day (5:00-5:30)
 	 - [ ] Fill in tomorrow's morning focus
 
 ## Thursday
@@ -69,7 +69,7 @@ Description of Week
 	 - [ ] Fill in deep work
  - [ ] **Deep Work** (2 hours)
  - [ ] Shallow Work
- - [ ] Wrap Up Day (17:00-17:30)
+ - [ ] Wrap Up Day (5:00-5:30)
 	 - [ ] Fill in tomorrow's morning focus
 
 ## Friday
@@ -83,5 +83,7 @@ Description of Week
 	 - [ ] Slack / Who needs CR?
 	 - [ ] *optionally* Technical Reading
  - [ ] Shallow Work
- - [ ] Wrap Up Day (16:00-17:00)
-	 - [ ] Fill in tomorrow's morning focus
+ - [ ] End of Week Wrap-Up (3:30-4:30)
+	 - [ ] Lattice Update
+	 - [ ] Write takeaways, accomplishments and action items
+	 - [ ] Record written notes to obsidian, if still relevant
