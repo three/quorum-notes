@@ -8,6 +8,7 @@ Description of Week
 	 - [ ] Look over email, slack, open PRs, etc
 	 - [ ] Carry-over action items from last week
 	 - [ ] Look over next week's calendar
+	 - [ ] Decide WFH schedule for the week
 	 - [ ] Update local dependencies, start up local server
 	 - [ ] Write goal for deep work
  - [ ] **Deep Work** (9:00-11:00)
