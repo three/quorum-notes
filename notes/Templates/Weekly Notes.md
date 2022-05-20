@@ -50,6 +50,8 @@ Description of Week
 	 - [ ] *Goal here*
  - [ ] PAC Standup (11:45)
  - [ ] Lunch
+ - [ ] **Eric/Frank**
+	 - [ ] Before: Lattice update
  - [ ] Afternoon Review
 	 - [ ] Slack / Who needs CR?
 	 - [ ] *optionally* Technical Reading
@@ -87,6 +89,5 @@ Description of Week
 	 - [ ] *optionally* Technical Reading
  - [ ] Shallow Work
  - [ ] End of Week Wrap-Up (3:30-4:30)
-	 - [ ] Lattice Update
 	 - [ ] Write takeaways, accomplishments and action items
 	 - [ ] Record written notes to obsidian, if still relevant

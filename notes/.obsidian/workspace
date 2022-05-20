@@ -90,14 +90,14 @@
   "active": "7b3646a3140d84d4",
   "lastOpenFiles": [
     "Weeks/2022Q2/Week of 2022-05-16.md",
+    "Weeks/2022Q2/Week of 2022-05-08.md",
+    "Templates/Weekly Notes.md",
     "Personal Documentation/M1 Setup Notes.md",
     "Current Projects/2022 May Postmortem.md",
     "Current Projects/Receipts Form.md",
     "Personal Documentation/Application Server Debugging.md",
     "Personal Documentation/Common Problems.md",
     "Personal Documentation/Debugging Grassroots Domains.md",
-    "Personal Documentation/Ngrok-like Public Port Forward.md",
-    "Personal Documentation/Remove Error Boundry.md",
-    "Personal Documentation/Testing Servers Quick Reference.md"
+    "Personal Documentation/Ngrok-like Public Port Forward.md"
   ]
 }
