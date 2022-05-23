@@ -6,7 +6,7 @@ Description of Week
 ## Monday
  - [ ] Morning Review (8:00-9:00)
 	 - [ ] Copy over meetings from Calendar
-	 - [ ] Upgrade Brew, Macports and Pycharm
+	 - [ ] Upgrade System, Brew, PyCharm or schedule
 	 - [ ] Look over email, slack, open PRs, etc
 	 - [ ] Carry-over action items from last week
 	 - [ ] Look over next week's calendar
