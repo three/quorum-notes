@@ -25,6 +25,7 @@ Description of Week
  - [ ] **Deep Work** (2 hours)
  - [ ] Shallow Work
  - [ ] Wrap Up Day (5:00-5:30)
+	 - [ ] Check if PRs can be merged
 	 - [ ] Fill in tomorrow's morning focus
 
 ## Tuesday
@@ -41,6 +42,7 @@ Description of Week
  - [ ] **Deep Work** (2 hours)
  - [ ] Shallow Work
  - [ ] Wrap Up Day (5:00-5:30)
+	 - [ ] Check if PRs can be merged
 	 - [ ] Fill in tomorrow's morning focus
 
 ## Wednesday
@@ -59,6 +61,7 @@ Description of Week
  - [ ] **Deep Work** (2 hours)
  - [ ] Shallow Work
  - [ ] Wrap Up Day (5:00-5:30)
+	 - [ ] Check if PRs can be merged
 	 - [ ] Fill in tomorrow's morning focus
 
 ## Thursday
@@ -75,6 +78,7 @@ Description of Week
  - [ ] **Deep Work** (2 hours)
  - [ ] Shallow Work
  - [ ] Wrap Up Day (5:00-5:30)
+	 - [ ] Check if PRs can be merged
 	 - [ ] Fill in tomorrow's morning focus
 
 ## Friday
@@ -89,5 +93,6 @@ Description of Week
 	 - [ ] *optionally* Technical Reading
  - [ ] Shallow Work
  - [ ] End of Week Wrap-Up (3:30-4:30)
+	 - [ ] Check if PRs can be merged
 	 - [ ] Write takeaways, accomplishments and action items
 	 - [ ] Record written notes to obsidian, if still relevant
