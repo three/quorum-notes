@@ -4,29 +4,29 @@ Prev Week: *link*
 Description of Week
 
 ## Monday
- - [ ] Morning Review (8:00-9:00)
-	 - [ ] Copy over meetings from Calendar
-	 - [ ] Upgrade System, Brew, PyCharm or schedule
-	 - [ ] Look over email, slack, open PRs, etc
-	 - [ ] Carry-over action items from last week
-	 - [ ] Look over next week's calendar
-	 - [ ] Decide WFH schedule for the week
-	 - [ ] Update local dependencies, start up local server
-	 - [ ] Write goal for deep work
- - [ ] **Deep Work** (9:00-11:00)
-	 - [ ] Turn Notifications Off
-	 - [ ] *Goal here*
- - [ ] PAC Standup (11:45)
- - [ ] Lunch
- - [ ] Afternoon Review
-	 - [ ] Slack / Who needs CR?
-	 - [ ] *optionally* Technical Reading
-	 - [ ] Fill in deep work
- - [ ] **Deep Work** (2 hours)
- - [ ] Shallow Work
- - [ ] Wrap Up Day (5:00-5:30)
-	 - [ ] Check if PRs can be merged
-	 - [ ] Fill in tomorrow's morning focus
+- [ ] Morning Review (9:00)
+	- [ ] Copy over meetings from Calendar
+	- [ ] Upgrade System, Brew, PyCharm or schedule
+	- [ ] Look over email, slack, open PRs, etc
+	- [ ] Carry-over action items from last week
+	- [ ] Look over next week's calendar
+	- [ ] Decide WFH schedule for the week
+	- [ ] Update local dependencies, start up local server
+	- [ ] Write goal for deep work
+- [ ] **Deep Work** (9:00-11:00)
+	- [ ] Turn Notifications Off
+	- [ ] *Goal here*
+- [ ] PAC Standup (11:45)
+- [ ] Lunch
+- [ ] Afternoon Review
+	- [ ] Slack / Who needs CR?
+	- [ ] *optionally* Technical Reading
+	- [ ] Fill in deep work
+- [ ] **Deep Work** (2 hours)
+- [ ] Shallow Work
+- [ ] Wrap Up Day (5:00-5:30)
+	- [ ] Check if PRs can be merged
+	- [ ] Fill in tomorrow's morning focus
 
 ## Tuesday
  - [ ] Morning Focus (8:00-11:30)
