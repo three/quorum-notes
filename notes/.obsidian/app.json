@@ -2,12 +2,15 @@
   "vimMode": true,
   "useMarkdownLinks": false,
   "legacyEditor": false,
-  "livePreview": true,
+  "livePreview": false,
   "pdfExportSettings": {
     "pageSize": "Letter",
     "landscape": false,
     "margin": "0",
     "downscalePercent": 42
   },
-  "promptDelete": false
+  "promptDelete": false,
+  "defaultViewMode": "preview",
+  "useTab": true,
+  "tabSize": 4
 }
