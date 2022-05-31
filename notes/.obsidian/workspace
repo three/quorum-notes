@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Weeks/2022Q2/Week of 2022-05-23.md",
+            "file": "Weeks/2022Q2/Week of 2022-05-31.md",
             "mode": "source",
             "source": true
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Weeks/2022Q2/Week of 2022-05-23.md",
+                "file": "Weeks/2022Q2/Week of 2022-05-31.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,15 +89,15 @@
   },
   "active": "4cef437e6fd368a7",
   "lastOpenFiles": [
+    "Weeks/2022Q2/Week of 2022-05-31.md",
+    "Weeks/Index of Weeks.md",
     "Weeks/2022Q2/Week of 2022-05-23.md",
     "Weeks/2022Q2/Week of 2022-05-16.md",
-    "Weeks/Index of Weeks.md",
+    "Templates/Weekly Notes.md",
     "Personal Documentation/Application Server Debugging.md",
     "Personal Documentation/Common Problems.md",
     "Personal Documentation/Debugging Grassroots Domains.md",
     "Personal Documentation/M1 Setup Notes.md",
-    "Current Projects/2022 May Postmortem.md",
-    "Current Projects/Receipts and Disbursements.md",
-    "Templates/Weekly Notes.md"
+    "Current Projects/2022 May Postmortem.md"
   ]
 }
