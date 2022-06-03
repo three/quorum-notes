@@ -4,13 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "4cef437e6fd368a7",
+        "id": "bce9077029106e92",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
             "file": "Weeks/2022Q2/Week of 2022-05-31.md",
-            "mode": "preview",
+            "mode": "source",
             "source": true
           }
         }
@@ -87,7 +87,7 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "4cef437e6fd368a7",
+  "active": "bce9077029106e92",
   "lastOpenFiles": [
     "Weeks/2022Q2/Week of 2022-05-31.md",
     "Weeks/Index of Weeks.md",
