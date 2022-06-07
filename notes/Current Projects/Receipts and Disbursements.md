@@ -19,12 +19,12 @@ Work in `temp/disburse-2`
 
 - [x] Disbursement Recipient
 	- [x] Missing labels for various Recipient types
-- [ ] Disbursement type
-	- [ ] tries to show radio buttons even when there are no options
-- [ ] Amount, Date and Purpose
+- [x] Disbursement type
+	- [x] tries to show radio buttons even when there are no options
+- [x] Amount, Date and Purpose
 	- [x] Transaction Date doesn't initially register today's date
-- [ ] Payment method
-	- [ ] must be hidden, even when there are no options
+- [x] Payment method
+	- [x] must be hidden, even when there are no options
 - [ ] Refactoring
 	- [ ] styled components should be placed into their own files
 	- [ ] components should be moved to more reasonable place
