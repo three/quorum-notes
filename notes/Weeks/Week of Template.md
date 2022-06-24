@@ -1,96 +1,88 @@
-# Week of X
-Description of Week
+# Week of *Date*
+Previous: *Link here*
+
+*Description of week*
+
+## Kitchen Sink
+ - [ ] Misc Tasks
+
+## Project
+Project note
 
 ## Monday
-- [ ] Morning Startup (8:00-9:00)
-	- [ ] Upgrade System, Macports and PyCharm PyCharm
-	- [ ] Copy over meetings from Calendar
-	- [ ] Look over email, slack, open PRs, and previous week takeaways.
-	- [ ] Look over next week's calendar
-	- [ ] Update local dependencies, start up local server
-	- [ ] Copy remaining todo items and projects from last week
-	- [ ] Write daily goals
-- [ ] Deep Work (9:00-11:30)
-	- [ ] Turn Notifications Off
-- [ ] **PAC Standup** (11:45)
+- [ ] **Weekly Startup**
+	- [ ] Upgrade System, App Store, Macports, Postgres, and PyCharm
+	- [ ] Start local server with latest dependencies
+	- [ ] Review this week and next week's calendar
+	- [ ] Write goals and deep work, add times
+- [ ] Morning Focus
+	- [ ] ***Morning Task****
+- [ ] **PAC Standup**
 - [ ] Lunch
 - [ ] Afternoon Review
-	- [ ] Slack, Email
-	- [ ] Who needs code review?
-	- [ ] Review written notes
-	- [ ] Update goals
-- [ ] Deep Work
-- [ ] Wrap Up Day (5:30)
-	- [ ] Slack, Email
-	- [ ] Check if PRs can be merged
-	- [ ] Write goals for tomorrow
+- [ ] Afternoon Focus
+	- [ ] Spotify Discover Weekly
+- [ ] Daily Wrap Up
+	- [ ] Finish up or write down incomplete tasks
+	- [ ] Merge open PRs if possible
 - [ ] Done.
 
 ## Tuesday
 - [ ] Morning Startup
-	- [ ] Slack, Email
-- [ ] Deep Work
-	- [ ] Turn Notifications Off
-- [ ] **PAC Standup and Refinement** (11:45)
+- [ ] Morning Focus
+- [ ] **PAC Standup**
+- [ ] **PAC Refinement**
 - [ ] Lunch
 - [ ] Afternoon Review
-	- [ ] Slack, Email
-	- [ ] Who needs code review?
-- [ ] **Wednesday Meditation**
-- [ ] Deep Work
-- [ ] Wrap Up Day (5:30)
-	- [ ] Slack, Email
-	- [ ] Check if PRs can be merged
-	- [ ] Write goals for tomorrow
+- [ ] Afternoon Focus
+- [ ] Daily Wrap Up
+	- [ ] Finish up or write down incomplete tasks
+	- [ ] Merge open PRs if possible
 - [ ] Done.
 
-## Wednesday
+## Wednensday
 - [ ] Morning Startup
-- [ ] Deep Work
-	- [ ] Turn Notifications Off
+- [ ] Morning Focus
 - [ ] **PAC Standup** (11:45)
-- [ ] Lunch
-- [ ] **Lattice Update**
+- [ ] WFW Lunch
+- [ ] After-Lunch Focus
+	- [ ] **Lattice Update**
 - [ ] **Eric/Frank**
 - [ ] Afternoon Review
-	- [ ] Slack, Email
-	- [ ] Code Review
-	- [ ] Technical Reading
-- [ ] Deep Work
-- [ ] Wrap Up Day (5:30)
-	- [ ] Slack, Email
-	- [ ] Check if PRs can be merged
-	- [ ] Write goals for tomorrow
+- [ ] Afternoon Focus (3:00)
+	- [ ] **Code Review**
+- [ ] Daily Wrap Up
+	- [ ] Finish up or push forward incomplete tasks
+	- [ ] Merge open PRs if possible
+		- [ ] https://github.com/QuorumUS/quorum-site/pull/26262
 - [ ] Done.
 
 ## Thursday
- - [ ] Morning Startup
- - [ ] Deep Work
-	 - [ ] Turn Notifications Off
- - [ ] **PAC Standup and Demo**
- - [ ] Lunch
- - [ ] Afternoon Review
+- [ ] Morning Startup
+- [ ] Morning Focus
+- [ ] **PAC Standup** (11:45)
+- [ ] Lunch/Workout
+- [ ] Afternoon Review
 	 - [ ] Slack, Email
 	 - [ ] Code Review
- - [ ] Deep Work
- - [ ] Shallow Work
- - [ ] Wrap Up Day (5:30)
-	- [ ] Slack, Email
-	- [ ] Check if PRs can be merged
-	- [ ] Write goals for tomorrow
+	 - [ ] Technical Reading
+- [ ] Afternoon Focus
+- [ ] Daily Wrap Up
+	- [ ] Finish up or push forward incomplete tasks
+	- [ ] Merge open PRs if possible
 - [ ] Done.
 
 ## Friday
- - [ ] Morning Startup
- - [ ] Deep Work
-	 - [ ] Turn Notifications Off
- - [ ] Lunch
- - [ ] Afternoon Review
-	 - [ ] Slack, Email
-	 - [ ] Code Review
- - [ ] Shallow Work
- - [ ] End of Week Wrap-Up (3:30-4:30)
-	 - [ ] Check if PRs can be merged
-	 - [ ] Write takeaways, accomplishments and action items
-	 - [ ] Record written notes to obsidian, if still relevant
- - [ ] **Done for week.**
+- [ ] Morning Startup
+- [ ] Morning Focus
+- [ ] Lunch
+- [ ] **Weekly Wind Down**
+	- [ ] Note status of any oustanding PRs
+	- [ ] Clean up branches
+	- [ ] Create next week's notes
+	- [ ] Write weekly takeaways
+	- [ ] Re-organize kitchen sink for next week
+- [ ] **Done for week.**
+
+## Takeaways
+ - *Fill in throughout week*
