@@ -2,7 +2,7 @@
   "vimMode": true,
   "useMarkdownLinks": false,
   "legacyEditor": false,
-  "livePreview": false,
+  "livePreview": true,
   "pdfExportSettings": {
     "pageSize": "Letter",
     "landscape": false,
