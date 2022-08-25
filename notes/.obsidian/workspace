@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Weeks/2022Q3/Week of 2022-08-15.md",
+            "file": "Weeks/2022Q3/Week of 2022-08-22.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Weeks/2022Q3/Week of 2022-08-15.md",
+                "file": "Weeks/2022Q3/Week of 2022-08-22.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,15 +89,15 @@
   },
   "active": "3916ac3ee057bc87",
   "lastOpenFiles": [
+    "Weeks/2022Q3/Week of 2022-08-15.md",
+    "Weeks/2022Q3/Week of 2022-08-22.md",
+    "Personal Meeting Notes/2022-08-18 DevConf 2022.md",
     "Personal Meeting Notes/2022-01-20 Eric <> Mares.md",
     "Personal Meeting Notes/2021-12-06 Dev Book Club.md",
     "Personal Meeting Notes/2021-12-13 Eric <> Chris M.md",
     "Post/First.md",
     "Quorum Office Inventory.md",
     "Weeks/Week of Template.md",
-    "Weeks/Index of Weeks.md",
-    "Old Projects/2022 May Postmortem.md",
-    "Personal Documentation/Application Server Debugging.md",
-    "Personal Documentation/Common Problems.md"
+    "Weeks/Index of Weeks.md"
   ]
 }
