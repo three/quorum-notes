@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Personal Documentation/Application Server Debugging.md",
+            "file": "Weeks/2022Q3/Week of 2022-09-12.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Personal Documentation/Application Server Debugging.md",
+                "file": "Weeks/2022Q3/Week of 2022-09-12.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,15 +89,15 @@
   },
   "active": "3916ac3ee057bc87",
   "lastOpenFiles": [
-    "Personal Documentation/Common Problems.md",
-    "Personal Documentation/Remove Error Boundry.md",
-    "Personal Documentation/Testing Servers Quick Reference.md",
-    "Personal Documentation/M1 Setup Notes.md",
-    "Personal Documentation/Ngrok-like Public Port Forward.md",
-    "Personal Documentation/Debugging Grassroots Domains.md",
-    "Personal Documentation/Application Server Debugging.md",
+    "Old Projects/2022 May Postmortem.md",
+    "Old Projects/QPAC-9 Cash Contribution limit errors.md",
     "Weeks/2022Q3/Week of 2022-09-12.md",
-    "Weeks/2022Q3/Week of 2022-09-05.md",
-    "IPDB Cheat Sheet.md"
+    "Bookmarks.md",
+    "Quorum Office Inventory.md",
+    "Post/First.md",
+    "Personal Meeting Notes/2022-01-20 Eric <> Mares.md",
+    "Personal Meeting Notes/2021-12-15 Eric <> Mares.md",
+    "Personal Meeting Notes/2021-12-13 Eric <> Chris M.md",
+    "Personal Meeting Notes/2021-12-06 Dev Book Club.md"
   ]
 }
