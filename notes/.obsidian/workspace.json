@@ -8,19 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "a77c140548aab95c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Weeks/2022Q4/Week of 2022-10-17.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "30f631e6d3f7e73c",
+            "id": "5d1ee6e84785be08",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -31,8 +19,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -108,10 +95,7 @@
     "width": 300,
     "collapsed": true
   },
-  "ribbon": {
-    "mostRecentAction": ""
-  },
-  "active": "30f631e6d3f7e73c",
+  "active": "5d1ee6e84785be08",
   "lastOpenFiles": [
     "Weeks/2022Q4/Week of 2022-10-17.md",
     "Weeks/2022Q4/Week of 2022-10-24.md",
