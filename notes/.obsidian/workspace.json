@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "7a7ab26c1f3a065e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Weeks/2022Q4/Week of 2022-10-31.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -77,7 +90,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Weeks/2022Q4/Week of 2022-10-24.md",
+                "file": "Weeks/2022Q4/Week of 2022-10-31.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,17 +108,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "5d1ee6e84785be08",
+  "active": "7a7ab26c1f3a065e",
   "lastOpenFiles": [
-    "Weeks/2022Q4/Week of 2022-10-17.md",
     "Weeks/2022Q4/Week of 2022-10-24.md",
+    "Weeks/2022Q4/Week of 2022-10-31.md",
+    "Weeks/2022Q4/Week of 2022-10-17.md",
     "Weeks/2022Q4/Week of 2022-10-03.md",
     "Weeks/2022Q4/Week of 2022-10-10.md",
     "Current Projects/QPAC-786 Disbursement Types Update.md",
     "Current Projects/VIDE Hackathon.md",
     "Weeks/2022Q3/Week of 2022-09-19.md",
     "Weeks/2022Q3/Week of 2022-09-26.md",
-    "Post/Second.md",
-    "Post/First.md"
+    "Post/Second.md"
   ]
 }
