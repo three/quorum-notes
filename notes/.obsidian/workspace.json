@@ -96,8 +96,8 @@
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
-                "backlinkCollapsed": true,
-                "unlinkedCollapsed": true
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
               }
             }
           }
@@ -110,8 +110,8 @@
   },
   "active": "7a7ab26c1f3a065e",
   "lastOpenFiles": [
-    "Weeks/2022Q4/Week of 2022-10-24.md",
     "Weeks/2022Q4/Week of 2022-10-31.md",
+    "Weeks/2022Q4/Week of 2022-10-24.md",
     "Weeks/2022Q4/Week of 2022-10-17.md",
     "Weeks/2022Q4/Week of 2022-10-03.md",
     "Weeks/2022Q4/Week of 2022-10-10.md",
