@@ -18,6 +18,18 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "3e6df5f100a6cd3b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Talks.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ]
       }
@@ -61,7 +73,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 271
+    "width": 271,
+    "collapsed": true
   },
   "right": {
     "id": "889ad6be20dde82f",
@@ -97,11 +110,11 @@
   },
   "active": "5d1ee6e84785be08",
   "lastOpenFiles": [
-    "Weeks/2022Q4/Week of 2022-10-24.md",
     "Talks.md",
+    "Weeks/2022Q4/Week of 2022-10-31.md",
+    "Weeks/2022Q4/Week of 2022-10-24.md",
     "Post/First.md",
     "Bookmarks.md",
-    "Weeks/2022Q4/Week of 2022-10-31.md",
     "Weeks/2022Q4/Week of 2022-10-17.md",
     "Weeks/2022Q4/Week of 2022-10-03.md",
     "Weeks/2022Q4/Week of 2022-10-10.md",
