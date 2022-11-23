@@ -4,28 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "443fabcccb874270",
+        "id": "2b7d08c5638f0844",
         "type": "tabs",
         "children": [
           {
-            "id": "5d1ee6e84785be08",
+            "id": "c318bc20201f2a59",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Weeks/2022Q4/Week of 2022-10-31.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "3e6df5f100a6cd3b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Talks.md",
+                "file": "Weeks/2022Q4/Week of 2022-11-21.md",
                 "mode": "source",
                 "source": false
               }
@@ -73,8 +61,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 271,
-    "collapsed": true
+    "width": 271
   },
   "right": {
     "id": "889ad6be20dde82f",
@@ -90,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Weeks/2022Q4/Week of 2022-10-31.md",
+                "file": "Weeks/2022Q4/Week of 2022-11-21.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,17 +95,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "5d1ee6e84785be08",
+  "active": "c318bc20201f2a59",
   "lastOpenFiles": [
-    "Talks.md",
-    "Weeks/2022Q4/Week of 2022-10-31.md",
-    "Weeks/2022Q4/Week of 2022-10-24.md",
-    "Post/First.md",
+    "Weeks/2022Q4/Week of 2022-11-14.md",
+    "Weeks/2022Q4/Week of 2022-11-21.md",
+    "Personal Documentation/Testing Servers Quick Reference.md",
+    "Personal Documentation/Application Server Debugging.md",
+    "Morning.md",
+    "Conference.md",
     "Bookmarks.md",
-    "Weeks/2022Q4/Week of 2022-10-17.md",
-    "Weeks/2022Q4/Week of 2022-10-03.md",
-    "Weeks/2022Q4/Week of 2022-10-10.md",
-    "Current Projects/QPAC-786 Disbursement Types Update.md",
-    "Current Projects/VIDE Hackathon.md"
+    "Quorum Office Inventory.md",
+    "Weeks/2022Q4/Week of 2022-11-07.md",
+    "Weeks/2022Q4/Week of 2022-10-31.md"
   ]
 }
