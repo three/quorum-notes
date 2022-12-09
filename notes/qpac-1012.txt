@@ -1,0 +1,21 @@
+ipdb error reproduction
+-----------------------
+
+[09/Dec/2022 10:21:18] WARNING  [5413] [app.querymethods +1090] Using "select_qs_rows" in production is not recommended.
+[09/Dec/2022 10:21:18] ERROR    [5413] [app.pac.models +1823] P2 - A CampaignFinanceLimit with the following fields does not exist: end_date__gte: 2022-01-01 00:00:00-05:00 or null, donor_type: Multicandidate PAC, period_type: Year, recipient_type: Candidate Committee, start_date__lte: 2022-01-01 00:00:00-05:00
+Traceback (most recent call last):
+  File "/webapps/quorum-site/quorum-site/app/pac/models.py", line 1811, in get_campaign_finance_limits
+    start_date__lte=occurred_time,
+  File "/webapps/quorum-site/local/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/webapps/quorum-site/local/lib/python2.7/site-packages/django/db/models/query.py", line 385, in get
+    self.model._meta.object_name
+DoesNotExist: CampaignFinanceLimit matching query does not exist.
+[09/Dec/2022 10:21:18] DEBUG    [5413] [app.ledger.services +2853] An invalid combination of filters were given to find a CampaignFinanceLimit
+
+col = Column.objects.unsafe_get(id='1137661')                   # <PoliticalCommitteeTransactionAggregationAvailableAmountColumn: #1137661 | Total $ Amount Available in Year or Election>
+evaluated_queryset_ids = [1818, 2055, 3128, 4135, 8832]
+user = QuorumUser.objects.get(id=28756471)                      # <QuorumUser: #28756471 | firm.rein+demo>
+kwa = {"data_type":114, "forced_regions": None, "queryset": PoliticalCommitteeQuerySet, "request": None}
+
+col.generate(evaluated_queryset_ids, user, **kwa)
