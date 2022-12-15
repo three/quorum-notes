@@ -1,5 +1,0 @@
-- What prs do you have open?
-- What jira tickets are you working on, are in review, or plan to pick up?
-- What commitments have you made?
-- Any stray notes? Any missed bullets?
-- Email, Unread Jira

@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "8f4408827ae7ab39",
+        "id": "d1ceec6db8d10f38",
         "type": "tabs",
         "children": [
           {
-            "id": "420c034dc9807107",
+            "id": "5b7c040800e0cab4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Weeks/2022Q4/Week of 2022-12-05.md",
+                "file": "Weeks/2022Q4/Week of 2022-12-12.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Weeks/2022Q4/Week of 2022-12-05.md",
+                "file": "Weeks/2022Q4/Week of 2022-12-12.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,17 +95,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "420c034dc9807107",
+  "active": "5b7c040800e0cab4",
   "lastOpenFiles": [
-    "Weeks/2022Q4/Week of 2022-10-24.md",
-    "Weeks/2022Q4/Week of 2022-12-05.md",
-    "Weeks/2022Q4/Week of 2022-11-28.md",
-    "Weeks/2022Q4/Week of 2022-11-21.md",
-    "Weeks/2022Q4/Week of 2022-11-14.md",
-    "Personal Documentation/Testing Servers Quick Reference.md",
-    "Personal Documentation/Application Server Debugging.md",
     "Morning.md",
     "Conference.md",
-    "Bookmarks.md"
+    "Weeks/2021Q3/Week of 2021-09-06.md",
+    "Current Projects/Receipts and Disbursements.md",
+    "Current Projects/QPAC-786 Disbursement Types Update.md",
+    "Current Projects/Typescript.md",
+    "Personal Documentation/IPDB Cheat Sheet.md",
+    "Personal Documentation/M1 Setup Notes.md",
+    "Personal Documentation/VIDE Hackathon.md",
+    "Old Projects/QPAC-440 Bank Balance not set upon creation of the bank account..md"
   ]
 }

@@ -19,3 +19,7 @@ user = QuorumUser.objects.get(id=28756471)                      # <QuorumUser: #
 kwa = {"data_type":114, "forced_regions": None, "queryset": PoliticalCommitteeQuerySet, "request": None}
 
 col.generate(evaluated_queryset_ids, user, **kwa)
+
+Failing sheets_spec tests
+-------------------------
+Unable to get full sheets_spec working, keeps crashing.
