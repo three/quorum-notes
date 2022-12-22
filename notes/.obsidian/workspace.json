@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "d86b5ed3e04aba80",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Weeks/2022Q4/Week of 2022-12-19.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -77,7 +90,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Weeks/2022Q4/Week of 2022-12-12.md",
+                "file": "Weeks/2022Q4/Week of 2022-12-19.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,8 +108,10 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "5b7c040800e0cab4",
+  "active": "d86b5ed3e04aba80",
   "lastOpenFiles": [
+    "Weeks/2022Q4/Week of 2022-12-12.md",
+    "Weeks/2022Q4/Week of 2022-12-19.md",
     "Morning.md",
     "Conference.md",
     "Weeks/2021Q3/Week of 2021-09-06.md",
@@ -104,8 +119,6 @@
     "Current Projects/QPAC-786 Disbursement Types Update.md",
     "Current Projects/Typescript.md",
     "Personal Documentation/IPDB Cheat Sheet.md",
-    "Personal Documentation/M1 Setup Notes.md",
-    "Personal Documentation/VIDE Hackathon.md",
-    "Old Projects/QPAC-440 Bank Balance not set upon creation of the bank account..md"
+    "Personal Documentation/M1 Setup Notes.md"
   ]
 }

@@ -4,9 +4,9 @@ https://www.quorum.club/pacinternal/16/filings/prepare_form_one/
 
 Frontned / Backend split
 
-Get functional requirements done before leaving for Christmas Break!!
+Get functional requirements done before leaving for Christmas Break!! (not happening lol)
 
-1)  Modify component PrepareFormOnePage
+1)  Modify component PrepareFormOnePage (PrepareFormOneMainSteps)
     Ensure required fields in correct order
         Might need some extra work to get numbering right -- initialize differently in CSS?
     Factor out Addresse fields -- already done in another component
@@ -39,3 +39,10 @@ FecForm1Submission.create_fec_form_1_submission_for_api
     Should Implement Cypress tests
 
 Reduced importantce -- doesn't need to be extensive because we might change this anyway (???)
+
+
+Potential Questions during Frontend work
+----------------------------------------
+- There seems not to be a corresponding *Is Report Amendment?* questions on the
+  Form3XSubmission model. It seems like this is determined "dynamically" (?) or
+  by a foreign key? This needs to be checked on the backend at least.
