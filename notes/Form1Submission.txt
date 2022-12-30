@@ -1,0 +1,40 @@
+Form 1 Submission Bug
+---------------------
+
+[28/Dec/2022 08:58:37] ERROR    [21315] [app.pac.api +794] Could not create this PacFile:
+Traceback (most recent call last):
+  File "/Users/ericroberts/dev/quorum-site/app/pac/api.py", line 726, in create_pacfile_and_form
+    form3x_report_code=report_code,
+  File "/Users/ericroberts/dev/quorum-site/app/pac/models.py", line 2346, in generate_pacfile
+    return PacFile.objects.create(**fields)
+  File "/Users/ericroberts/dev/quorum-site/venv/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/ericroberts/dev/quorum-site/venv/lib/python2.7/site-packages/django/db/models/query.py", line 399, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/Users/ericroberts/dev/quorum-site/venv/lib/python2.7/site-packages/model_utils/tracker.py", line 243, in save
+    ret = original_save(instance, *args, **kwargs)
+  File "/Users/ericroberts/dev/quorum-site/app/pac/models.py", line 2258, in save
+    self.clean()
+  File "/Users/ericroberts/dev/quorum-site/app/pac/models.py", line 2416, in clean
+    self._validate_amendment_info()
+  File "/Users/ericroberts/dev/quorum-site/app/pac/models.py", line 2605, in _validate_amendment_info
+    raise ValidationError(error_dict)
+ValidationError: {'amendment_number': [u'amendment_number must be specified and nonzero if and only if amends_filing_id is provided.']}
+
+Pacfile (relevant fields)
+    .amendment_form     (Pacfile)       Optionally, what we're amending
+    .amends_filing_id   (string)        If amending, the filing id, equal to .amendment_form.fec_id if amendment_form exists
+                                        Gets set to pacfile.ledger_settings.prior_form_1_fec_id
+    .amendment_number   (integer)       Number of amendment submissions made with this FEC id
+
+- By the time we're in _validate_amendment_info
+    > self.amendment_number
+    u'1'
+    > self.amends_filing_id
+    u''
+- Issue seems to happen in handle_pacfile_fields_for_form_1
+    LedgerSettings.prior_form_1_fec_id
+
+Dev Server
+----------
+ledger_settings = LedgerSettings.objects.unsafe_get(id=16)  # <LedgerSettings: #16 | Org #3082 | Hello World PAC>
