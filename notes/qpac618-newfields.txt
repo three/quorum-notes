@@ -1,0 +1,102 @@
+NEW     ORIG
+0001    0001    form_type,  # form type
+0002    0002    self.pac_file.ledger_settings.fec_committee_id,  # filer committee id
+0003    0003    "X" if self.name_changing else "",  # change of committee name
+0004    0004    self.committee_name,  # committee name
+0005    0005    "X" if self.address_changing else "",  # change of committee address
+0006    0006    self.street_address_1,  # street 1
+0007    0007    self.street_address_2,  # street 2
+0008    0008    self.city,  # city
+0009    0009    self.state,  # state
+0010    0010    self.zip_code,  # zip
+0011    0011    "X" if self.email_changing else "",  # change of committee email
+0012    0012    self.email,  # committee email
+0013    0013    "X" if self.url_changing else "",  # change of committee web url
+0014    0014    self.url,  # committee web url
+0015    0015    self.updated.strftime("%Y%m%d"),  # effective date
+0016    0016    self.treasurer_last_name,  # signature last name
+0017    0017    self.treasurer_first_name,  # signature first name
+0018    0018    self.treasurer_middle_name,  # signature middle name
+0019    0019    self.treasurer_prefix_name,  # signature prefix
+0020    0020    self.treasurer_suffix_name,  # signature suffix
+0021    0021    date_signed,  # date signed
+0022    0022    self.form_1_line_5_committee_type.fec_code,  # 5. committee type
+0023    0023    "",  # 5. candidate id number
+0024    0024    "",  # 5. candidate last name
+0025    0025    "",  # 5. candidate first name
+0026    0026    "",  # 5. candidate middle name
+0027    0027    "",  # 5. candidate prefix
+0028    0028    "",  # 5. candidate suffix
+0029    0029    "",  # 5. candidate office
+0030    0030    "",  # 5. candidate state
+0031    0031    "",  # 5. candidate district
+0032    0032    "",  # 5. party code
+0033    0033    "",  # 5. party type
+0034    0034    self.pac_type.fec_code,  # 5(e). organization type
+0035    0035    is_lobbyist_or_registrant_pac_5e,  # 5(e). lobbyist/registrant PAC
+0036    0036    is_lobbyist_or_registrant_pac_5f,  # 5(f). lobbyist/registrant PAC
+0037    0037    "X" if self.is_leadership_pac else "",  # 5(f). leadership PAC
+0038            Blank?? # 5(g). Lobbyist/Registrant PAC
+0039            Blank?? # f(h). Lobbyist/Registrant PAC
+0040    0038    self.affiliated_entity_committee_id,  # 6. affiliated committee id number
+0041    0039    self.affiliated_entity_org_name,  # 6. affiliated committee name
+0042    0040    self.affiliated_entity_candidate_id,  # 6. affiliated candidate id number
+0043    0041    self.affiliated_entity_last_name,  # 6. affiliated last name
+0044    0042    self.affiliated_entity_first_name,  # 6. affiliated first name
+0045    0043    self.affiliated_entity_middle_name,  # 6. affiliated middle name
+0046    0044    self.affiliated_entity_prefix_name,  # 6. affiliated prefix
+0047    0045    self.affiliated_entity_suffix_name,  # 6. affiliated suffix
+0048    0046    self.affiliated_entity_street_address_1,  # 6. affiliated street 1
+0049    0047    self.affiliated_entity_street_address_2,  # 6. affiliated street 2
+0050    0048    self.affiliated_entity_city,  # 6. affiliated city
+0051    0049    self.affiliated_entity_state,  # 6. affiliated state
+0052    0050    self.affiliated_entity_zip,  # 6. affiliated zip
+0053    0051    affiliated_relationship_code,  # 6. affiliated relationship code
+0054    0052    self.custodian_of_records_last_name,  # 7. custodian last name
+0055    0053    self.custodian_of_records_first_name,  # 7. custodian first name
+0056    0054    self.custodian_of_records_middle_name,  # 7. custodian middle name
+0057    0055    self.custodian_of_records_prefix_name,  # 7. custodian prefix
+0058    0056    self.custodian_of_records_suffix_name,  # 7. custodian suffix
+0059    0057    self.custodian_of_records_street_address_1,  # 7. custodian street 1
+0060    0058    self.custodian_of_records_street_address_2,  # 7. custodian street 2
+0061    0059    self.custodian_of_records_city,  # 7. custodian city
+0062    0060    self.custodian_of_records_state,  # 7. custodian state
+0063    0061    self.custodian_of_records_zip,  # 7. custodian zip
+0064    0062    self.custodian_of_records_title,  # 7. custodian title
+0065    0063    self.custodian_of_records_phone,  # 7. custodian telephone
+0066    0064    self.treasurer_last_name,  # 8. treasurer last name
+0067    0065    self.treasurer_first_name,  # 8. treasurer first name
+0068    0066    self.treasurer_middle_name,  # 8. treasurer middle name
+0069    0067    self.treasurer_prefix_name,  # 8. treasurer prefix
+0070    0068    self.treasurer_suffix_name,  # 8. treasurer suffix
+0071    0069    self.treasurer_street_address_1,  # 8. treasurer street 1
+0072    0070    self.treasurer_street_address_2,  # 8. treasurer street 2
+0073    0071    self.treasurer_city,  # 8. treasurer city
+0074    0072    self.treasurer_state,  # 8. treasurer state
+0075    0073    self.treasurer_zip,  # 8. treasurer zip
+0076    0074    self.treasurer_title,  # 8. treasurer title
+0077    0075    self.treasurer_phone,  # 8. treasurer telephone
+0078    0076    self.designated_agent_last_name,  # 8. agent last name
+0079    0077    self.designated_agent_first_name,  # 8. agent first name
+0080    0078    self.designated_agent_middle_name,  # 8. agent middle name
+0081    0079    self.designated_agent_prefix_name,  # 8. agent prefix
+0082    0080    self.designated_agent_suffix_name,  # 8. agent suffix
+0083    0081    self.designated_agent_street_address_1,  # 8. agent street 1
+0084    0082    self.designated_agent_street_address_2,  # 8. agent street 2
+0085    0083    self.designated_agent_city,  # 8. agent city
+0086    0084    self.designated_agent_state,  # 8. agent state
+0087    0085    self.designated_agent_zip,  # 8. agent zip
+0088    0086    self.designated_agent_title,  # 8. agent title
+0089    0087    self.designated_agent_phone,  # 8. agent telephone
+0090    0088    self.primary_bank_name,  # 9(a). bank name
+0091    0089    self.primary_bank_street_address_1,  # 9(a). bank street 1
+0092    0090    self.primary_bank_street_address_2,  # 9(a). bank street 2
+0093    0091    self.primary_bank_city,  # 9(a). bank city
+0094    0092    self.primary_bank_state,  # 9(a). bank state
+0095    0093    self.primary_bank_zip,  # 9(a). bank zip
+0096    0094    self.secondary_bank_name,  # 9(b). bank name
+0097    0095    self.secondary_bank_street_address_1,  # 9(b). bank street 1
+0098    0096    self.secondary_bank_street_address_2,  # 9(b). bank street 2
+0099    0097    self.secondary_bank_city,  # 9(b). bank city
+0100    0098    self.secondary_bank_state,  # 9(b). bank state
+0101    0099    self.secondary_bank_zip,  # 9(b). bank zip
