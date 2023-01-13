@@ -1,0 +1,4 @@
+== Form 1 Historical Creation ==
+
+= What happens when converting a PacFile
+    PacFileFormStatusType .in_progress -> .reconstruction_of_filing_with_previous_vendor
