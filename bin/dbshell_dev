@@ -1,3 +1,0 @@
-#!/bin/sh
-export PGPASSWORD="$(grep 'DEV_DB_AND_RDS_TEST_DB_PASSWORD_QUORUM_DJANGO_USER \=' quorum/settings/production_secrets.py | gsed -E 's/[A-Z_]+ \= r?"([a-zA-Z0-9]+)"$/\1/')"
-exec psql -h localhost -p 5433 -U quorum_django_user -d quorum_db
