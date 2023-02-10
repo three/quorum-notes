@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "0fd8f8f13ba89f35",
+            "id": "825721a7d65df99c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Weeks/2023Q1/Week of 2023-01-30.md",
+                "file": "Weeks/2023Q1/Week of 2023-02-06.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Weeks/2023Q1/Week of 2023-01-30.md",
+                "file": "Weeks/2023Q1/Week of 2023-02-06.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Weeks/2023Q1/Week of 2023-01-30.md",
+                "file": "Weeks/2023Q1/Week of 2023-02-06.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Weeks/2023Q1/Week of 2023-01-30.md"
+                "file": "Weeks/2023Q1/Week of 2023-02-06.md"
               }
             }
           }
@@ -146,9 +146,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0fd8f8f13ba89f35",
+  "active": "825721a7d65df99c",
   "lastOpenFiles": [
     "Weeks/2023Q1/Week of 2023-01-30.md",
+    "Weeks/2023Q1/Week of 2023-02-06.md",
     "Weeks/2023Q1/Week of 2023-01-23.md",
     "Reviews/2023 Winter Review Planning.md",
     "Reviews/2023 Winter Supporting Docs.md",
