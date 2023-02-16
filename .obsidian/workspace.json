@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Reference/Testing Servers Quick Reference.md",
+                "file": "Weeks/2023Q1/Week of 2023-02-13.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Reference/Testing Servers Quick Reference.md",
+                "file": "Weeks/2023Q1/Week of 2023-02-13.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Reference/Testing Servers Quick Reference.md",
+                "file": "Weeks/2023Q1/Week of 2023-02-13.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Reference/Testing Servers Quick Reference.md"
+                "file": "Weeks/2023Q1/Week of 2023-02-13.md"
               }
             }
           }
@@ -148,6 +148,7 @@
   },
   "active": "28399ab13ea56221",
   "lastOpenFiles": [
+    "Reference/Testing Servers Quick Reference.md",
     "Weeks/2023Q1/Week of 2023-02-13.md",
     "Weeks/2023Q1/Week of 2023-02-06.md",
     "Weeks/2023Q1/Week of 2023-01-30.md",
@@ -156,7 +157,6 @@
     "Reviews/2023 Winter Supporting Docs.md",
     "Weeks/2023Q1/Week of 2023-01-16.md",
     "Weeks/2021Q3/Week of 2021-09-06.md",
-    "Weeks/2023Q1/Week  of 2023-01-02.md",
-    "2023-01-23.md"
+    "Weeks/2023Q1/Week  of 2023-01-02.md"
   ]
 }
