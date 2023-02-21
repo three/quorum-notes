@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "f7ec01bb3d783a9e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Weeks/2023Q1/Week of 2023-02-20.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -69,7 +82,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 296.5
   },
   "right": {
     "id": "43708cfce65440f3",
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Weeks/2023Q1/Week of 2023-02-13.md",
+                "file": "Weeks/2023Q1/Week of 2023-02-20.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Weeks/2023Q1/Week of 2023-02-13.md",
+                "file": "Weeks/2023Q1/Week of 2023-02-20.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Weeks/2023Q1/Week of 2023-02-13.md"
+                "file": "Weeks/2023Q1/Week of 2023-02-20.md"
               }
             }
           }
@@ -146,17 +159,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "28399ab13ea56221",
+  "active": "f7ec01bb3d783a9e",
   "lastOpenFiles": [
-    "Weeks/2023Q1/Week of 2023-02-06.md",
     "Weeks/2023Q1/Week of 2023-02-13.md",
+    "Weeks/2023Q1/Week of 2023-02-06.md",
+    "Weeks/2023Q1/Week of 2023-02-20.md",
     "Reference/Testing Servers Quick Reference.md",
     "Weeks/2023Q1/Week of 2023-01-30.md",
     "Weeks/2023Q1/Week of 2023-01-23.md",
     "Reviews/2023 Winter Review Planning.md",
     "Reviews/2023 Winter Supporting Docs.md",
     "Weeks/2023Q1/Week of 2023-01-16.md",
-    "Weeks/2021Q3/Week of 2021-09-06.md",
-    "Weeks/2023Q1/Week  of 2023-01-02.md"
+    "Weeks/2021Q3/Week of 2021-09-06.md"
   ]
 }
