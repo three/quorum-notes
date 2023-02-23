@@ -23,9 +23,11 @@
             "id": "d3db4c7ce182a060",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.1.15"
+                "file": "Weeks/2023Q1/Week of 2023-02-20.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
