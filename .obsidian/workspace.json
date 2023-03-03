@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Reference/Testing Servers Quick Reference.md",
+                "file": "Weeks/2023Q1/Week of 2023-02-27.md",
                 "mode": "source",
                 "source": false
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Reference/Testing Servers Quick Reference.md",
+                "file": "Weeks/2023Q1/Week of 2023-02-27.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Reference/Testing Servers Quick Reference.md",
+                "file": "Weeks/2023Q1/Week of 2023-02-27.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Reference/Testing Servers Quick Reference.md"
+                "file": "Weeks/2023Q1/Week of 2023-02-27.md"
               }
             }
           }
@@ -197,6 +197,7 @@
   },
   "active": "302e10fb212feb2a",
   "lastOpenFiles": [
+    "Reference/Testing Servers Quick Reference.md",
     "Weeks/2023Q1/Week of 2023-02-27.md",
     "Tickets/QPAC-1218 Action Center link to Donation Form.md",
     "Weeks/2023Q1/Week of 2023-02-20.md",
@@ -205,7 +206,6 @@
     "Tickets",
     "Weeks/2023Q1/Week of 2023-02-06.md",
     "Weeks/2023Q1/Week of 2023-02-13.md",
-    "Reference/Testing Servers Quick Reference.md",
     "Weeks/2023Q1/Week of 2023-01-30.md",
     "Weeks/2023Q1/Week of 2023-01-23.md",
     "Reviews/2023 Winter Review Planning.md",
