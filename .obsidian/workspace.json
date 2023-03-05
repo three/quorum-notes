@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Weeks/2023Q1/Week of 2023-02-27.md",
+                "file": "Weeks/2023Q1/Week of 2023-03-06.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Weeks/2023Q1/Week of 2023-02-27.md",
+                "file": "Weeks/2023Q1/Week of 2023-03-06.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Weeks/2023Q1/Week of 2023-02-27.md",
+                "file": "Weeks/2023Q1/Week of 2023-03-06.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Weeks/2023Q1/Week of 2023-02-27.md"
+                "file": "Weeks/2023Q1/Week of 2023-03-06.md"
               }
             }
           }
@@ -148,11 +148,14 @@
   },
   "active": "302e10fb212feb2a",
   "lastOpenFiles": [
-    "Reference/Testing Servers Quick Reference.md",
+    "Weeks/2023Q1/Week of 2023-01-16.md",
+    "Weeks/2023Q1/Week of 2023-03-06.md",
+    "Weeks/2023Q1/Week of 2023-01-09.md",
     "Weeks/2023Q1/Week of 2023-02-27.md",
     "Tickets/QPAC-1218 Action Center link to Donation Form.md",
-    "Weeks/2023Q1/Week of 2023-02-20.md",
     "Tickets/QPAC-1146 Contact Profile Updates.md",
+    "Weeks/2023Q1/Week of 2023-02-20.md",
+    "Reference/Testing Servers Quick Reference.md",
     "Reviews/2023 Winter Supporting Docs.md",
     "Tickets",
     "Weeks/2023Q1/Week of 2023-02-06.md",
@@ -160,7 +163,6 @@
     "Weeks/2023Q1/Week of 2023-01-30.md",
     "Weeks/2023Q1/Week of 2023-01-23.md",
     "Reviews/2023 Winter Review Planning.md",
-    "Weeks/2023Q1/Week of 2023-01-16.md",
     "Weeks/2021Q3/Week of 2021-09-06.md"
   ]
 }
