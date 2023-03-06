@@ -18,8 +18,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "a9cf364494ae1b09",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.1.16"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -146,7 +157,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "302e10fb212feb2a",
+  "active": "a9cf364494ae1b09",
   "lastOpenFiles": [
     "Weeks/2023Q1/Week of 2023-02-27.md",
     "Weeks/2023Q1/Week of 2023-03-06.md",
