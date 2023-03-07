@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "5065a18b9edfe531",
+        "id": "7c4def4286274965",
         "type": "tabs",
         "children": [
           {
-            "id": "7eed5830e898c061",
+            "id": "a1eee8c7af951a77",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Weeks/2023Q1/Week of 2023-03-06.md",
+                "file": "Tickets/QPAC-1200 Outbox Magic Link Placeholders for Donation Form.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Weeks/2023Q1/Week of 2023-03-06.md",
+                "file": "Tickets/QPAC-1200 Outbox Magic Link Placeholders for Donation Form.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Weeks/2023Q1/Week of 2023-03-06.md",
+                "file": "Tickets/QPAC-1200 Outbox Magic Link Placeholders for Donation Form.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Weeks/2023Q1/Week of 2023-03-06.md"
+                "file": "Tickets/QPAC-1200 Outbox Magic Link Placeholders for Donation Form.md"
               }
             }
           }
@@ -146,16 +146,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7eed5830e898c061",
+  "active": "a1eee8c7af951a77",
   "lastOpenFiles": [
     "Weeks/2023Q1/Week of 2023-03-06.md",
+    "Tickets/QPAC-1218 Action Center link to Donation Form.md",
     "Weeks/2023Q1/Week of 2023-02-27.md",
     "Tickets/QPAC-1200 Outbox Magic Link Placeholders for Donation Form.md",
     "Weeks/2022Q2/Week of 2022-04-18.md",
     "Week of Template.md",
     "Weeks/2023Q1/Week of 2023-01-16.md",
     "Weeks/2023Q1/Week of 2023-01-09.md",
-    "Tickets/QPAC-1218 Action Center link to Donation Form.md",
     "Tickets/QPAC-1146 Contact Profile Updates.md",
     "Weeks/2023Q1/Week of 2023-02-20.md",
     "Reference/Testing Servers Quick Reference.md",
