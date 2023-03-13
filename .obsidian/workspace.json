@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Weeks/2023Q1/Week of 2023-03-13.md",
+                "file": "Tickets/QPAC-1200 Outbox Magic Link Placeholders for Donation Form.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Weeks/2023Q1/Week of 2023-03-13.md",
+                "file": "Tickets/QPAC-1200 Outbox Magic Link Placeholders for Donation Form.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Weeks/2023Q1/Week of 2023-03-13.md",
+                "file": "Tickets/QPAC-1200 Outbox Magic Link Placeholders for Donation Form.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Weeks/2023Q1/Week of 2023-03-13.md"
+                "file": "Tickets/QPAC-1200 Outbox Magic Link Placeholders for Donation Form.md"
               }
             }
           }
@@ -161,8 +161,8 @@
   },
   "active": "1bcfac4ecb44e1e7",
   "lastOpenFiles": [
-    "Weeks/2023Q1/Week of 2023-03-06.md",
     "Weeks/2023Q1/Week of 2023-03-13.md",
+    "Weeks/2023Q1/Week of 2023-03-06.md",
     "Weeks/2023Q1/Week of 2023-02-27.md",
     "Tickets/QPAC-1200 Outbox Magic Link Placeholders for Donation Form.md",
     "Tickets/QPAC-1218 Action Center link to Donation Form.md",
