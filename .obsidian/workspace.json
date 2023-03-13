@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "1bcfac4ecb44e1e7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Weeks/2023Q1/Week of 2023-03-13.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -69,7 +82,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 296.5
+    "width": 220.5
   },
   "right": {
     "id": "43708cfce65440f3",
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Weeks/2023Q1/Week of 2023-03-06.md",
+                "file": "Weeks/2023Q1/Week of 2023-03-13.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Weeks/2023Q1/Week of 2023-03-06.md",
+                "file": "Weeks/2023Q1/Week of 2023-03-13.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Weeks/2023Q1/Week of 2023-03-06.md"
+                "file": "Weeks/2023Q1/Week of 2023-03-13.md"
               }
             }
           }
@@ -146,10 +159,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a1eee8c7af951a77",
+  "active": "1bcfac4ecb44e1e7",
   "lastOpenFiles": [
-    "Weeks/2023Q1/Week of 2023-02-27.md",
     "Weeks/2023Q1/Week of 2023-03-06.md",
+    "Weeks/2023Q1/Week of 2023-03-13.md",
+    "Weeks/2023Q1/Week of 2023-02-27.md",
     "Tickets/QPAC-1200 Outbox Magic Link Placeholders for Donation Form.md",
     "Tickets/QPAC-1218 Action Center link to Donation Form.md",
     "Weeks/2022Q2/Week of 2022-04-18.md",
